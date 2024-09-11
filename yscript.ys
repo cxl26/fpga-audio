@@ -1,0 +1,5 @@
+read_verilog source/toplevel.v source/uart.v source/pll.v
+
+synth_ice40 -noflatten -blif build/fpga-audio.blif
+
+write_json build/fpga-audio.json
