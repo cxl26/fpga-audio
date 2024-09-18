@@ -25,7 +25,8 @@ module top (
     wire       rx_valid;
     wire       clk;
 
-    wire [:] ;
+    wire [23:0] sine_value;
+    wire        query_sine;
     assign out_mclk = clk;
 
 
@@ -36,12 +37,12 @@ module top (
         .CNTR_WDTH = 2
     ) dds_u1 (
         .clk,
-        .change_note(),
-        .query_sine ()
-        .note       ()
-        .sine       ()
+        .change_note(rx_valid && tx_ready),
+        .query_sine (query_sine),
+        .note       (data_byte[6:0]),
+        .sine       (sine_value)
     );
-
+    
     i2s_tx #(
         .DAT_WDTH (24),       // Width must be < SCK_RATE/WS_RATE
         .WS_RATE  (48000),    // 48     kHz, sampling rate
@@ -54,10 +55,10 @@ module top (
         .ws  (out_ws),
         .sd  (out_sd),
         /* Data to be serialised */
-        .left_chan  (),
-        .right_chan (),
+        .left_chan  (sine_value),
+        .right_chan (sine_value),
         .valid      (),
-        .ready      ()
+        .ready      (sine_strobe)
     );
 
     pll pll_u1 (

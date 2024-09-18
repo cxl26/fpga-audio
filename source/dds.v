@@ -22,7 +22,7 @@ endmodule
 module sine_lookup #(
     parameter DATA_WDTH = 24,
     parameter ADDR_WDTH = 12,
-    parameter CNTR_WDTH = 2
+    parameter CNTR_WDTH = 4
 )
 (
     input  wire                             clk,
@@ -100,7 +100,20 @@ module dds #(
     
     // Very generous registers here probably don't need so much pipelining
     // Can reduce later on to reduce latency (not that it matters)
-    
+
+    // When changing note, a 2-cycle latency is not noticeable
+    // When loading sine values, we load the registered value
+    // Next load will be in >> 3 cycles (48 kHz sample rate vs ~MHz clock rate)
+
+    // 2 cycle latency from change_note to sine value appearing:
+        // 1. bram read latency for note lookup
+        // 2. put looked up step on step size register
+
+    // 3 cycle latency from query_sine to sine value appearing:
+        // 1. update sine_lookup address register
+        // 2. bram read latency for sine lookup
+        // 3. put sine_value on sine register
+
     always @(posedge clk) begin
         if (change_note) begin
             note_lookup <= note;
