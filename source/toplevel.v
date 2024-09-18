@@ -29,8 +29,6 @@ module top (
     wire        query_sine;
     assign out_mclk = clk;
 
-
-
     dds #(
         .DATA_WDTH = 24,
         .ADDR_WDTH = 12,

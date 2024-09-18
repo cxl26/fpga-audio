@@ -26,7 +26,7 @@ module sine_lookup #(
 )
 (
     input  wire                             clk,
-    input  wire [ADDR_WDTH+CNTR_WDTH+2-1:0] sine_lookup,
+    input  wire [ADDR_WDTH+CNTR_WDTH-1:0] sine_lookup,
     output wire [DATA_WDTH-1:0]             sine_value
 );
     
@@ -36,10 +36,10 @@ module sine_lookup #(
     reg                  sine_inv  = 0;  //flag for inverting sine address
     reg                  sine_neg  = 0;  //flag for negating sine value
     reg  [CNTR_WDTH-1:0] sine_cntr = 0; //counter for phase accumulating sine lookup
-    reg  [ADDR_WDTH-1:0] sine_addr = 0; //address for selecting lookup sine value
+    reg  [ADDR_WDTH-3:0] sine_addr = 0; //address for selecting lookup sine value
     
     wire [DATA_WDTH-1:0] sine_data;
-    reg  [ADDR_WDTH-1:0] sine_addr_inv;
+    reg  [ADDR_WDTH-3:0] sine_addr_inv;
     reg                  delayed_sine_neg;
     
     assign {sine_neg, sine_inv, sine_addr, sine_cntr} = sine_lookup
@@ -48,7 +48,7 @@ module sine_lookup #(
     always@(*)           sine_addr_inv     = sine_inv ? ~sine_addr : sine_addr;
     always@(posedge clk) delayed_sine_neg <= sine_neg;
     
-    initial $readmemb("sine_lookup_init_file.txt", rom);
+    initial $readmemb("sine_lookup.txt", rom);
 
     always @(posedge clk) begin
         sine_data <= rom[sine_addr];
@@ -68,7 +68,7 @@ module note_lookup #(
     localparam RAM_SIZE = 2**ADDR_WDTH;
     reg [DATA_WDTH-1:0] rom [RAM_SIZE:0];
 
-    initial $readmemb("note_lookup_init_file.txt", rom);
+    initial $readmemb("note_lookup.txt", rom);
 
     always @(posedge clk) begin
         note_value <= rom[note_lookup];
@@ -79,7 +79,7 @@ endmodule
 module dds #(
     parameter DATA_WDTH = 24,
     parameter ADDR_WDTH = 12,
-    parameter CNTR_WDTH = 2
+    parameter CNTR_WDTH = 4
 ) (
     input  wire clk,
     input  wire change_note,
