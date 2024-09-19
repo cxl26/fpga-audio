@@ -1,0 +1,48 @@
+.PHONY: synth sim clean
+
+# Synthesis 
+$(BUILD_TARGET).json: $(SRC_FILES)
+	yosys read_verilog $(SRC_FILES)
+	yosys hierarchy -top $(DESIGN)
+	yosys synth_ice40 -noflatten 
+	yosys write_blif $(BUILD_TARGET).blif
+	yosys write_json $(BUILD_TARGET).json
+
+$(BUILD_TARGET).asc: $(BUILD_TARGET).json $(ROOT_DIR)/constraint/fpga_audio.pcf
+	nextpnr-ice40 -l $(ROOT_DIR)logs/nextpnr_log.txt \
+				--hx1k \
+				--package tq144 \
+				--pcf $(ROOT_DIR)/constraint/fpga_audio.pcf \
+				--json $(BUILD_TARGET).json \
+				--asc  $(BUILD_TARGET).asc
+
+$(BUILD_TARGET).bin: $(BUILD_TARGET).asc $(ROOT_DIR)/constraint/fpga_audio.pcf
+	icetime -p $(ROOT_DIR)/constraint/fpga_audio.pcf -P tq144 -d hx1k -t $(BUILD_TARGET).asc
+	icepack $(BUILD_TARGET).asc $(BUILD_TARGET).bin
+
+synth: $(BUILD_TARGET).bin
+
+
+# Simulation
+$(BUILD_TARGET).out: $(SRC_FILES)
+	mkdir -p $(BUILD_TARGET)
+	iverilog -Y .v \
+			-y $(ROOT_DIR)/source/clk \
+			-y $(ROOT_DIR)/source/dds \
+			-y $(ROOT_DIR)/source/fifo \
+			-y $(ROOT_DIR)/source/i2s \
+			-y $(ROOT_DIR)/source/ram \
+			-y $(ROOT_DIR)/source/uart \
+			-o $(BUILD_TARGET).out \
+			$(TESTBENCH)
+
+$(BUILD_TARGET).vcd: $(BUILD_TARGET).out
+	vvp -dumpfile $(BUILD_TARGET).vcd  $(BUILD_TARGET).out
+
+sim: $(BUILD_TARGET).vcd
+
+
+# Clean
+clean:
+	rm -f $(BUILD_TARGET)/*.json $(BUILD_TARGET)/*.blif $(BUILD_TARGET)/*.asc $(BUILD_TARGET)/*.bin
+	rm -f $(BUILD_TARGET)/*.out $(BUILD_TARGET)/*.vcd

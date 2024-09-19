@@ -1,4 +1,4 @@
-module uart_tx_serialise #(
+module uart_tx_derived_clk #(
     parameter       DATA_BITS   = 8,
     parameter       STOP_BITS   = 1,
     parameter       CLK_RATE    = 12000000,

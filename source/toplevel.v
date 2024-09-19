@@ -9,8 +9,8 @@ module top (
     output reg  led3,
     output reg  led4,
     output reg  led5,
-    input      rx_pin,
-    output     tx_pin, 
+    input  wire rx_pin,
+    output wire tx_pin
 );
 
     localparam ASCII_0 = 8'd48;
@@ -30,11 +30,11 @@ module top (
     assign out_mclk = clk;
 
     dds #(
-        .DATA_WDTH = 24,
-        .ADDR_WDTH = 12,
-        .CNTR_WDTH = 2
+        .DATA_WDTH(24),
+        .ADDR_WDTH(12),
+        .CNTR_WDTH(2)
     ) dds_u1 (
-        .clk,
+        .clk        (clk),
         .change_note(rx_valid && tx_ready),
         .query_sine (query_sine),
         .note       (data_byte[6:0]),
@@ -47,11 +47,11 @@ module top (
         .SCK_RATE (3072000),  // 307.2  kHz, 64x sampling
         .CLK_RATE (12288000)  // 122.88 MHz, 256x sampling
     ) i2s_tx_u1 (
-        .clk(clk)
+        .clk        (clk),
         /* I2S interface wires */
-        .sck (out_sck),
-        .ws  (out_ws),
-        .sd  (out_sd),
+        .sck        (out_sck),
+        .ws         (out_ws),
+        .sd         (out_sd),
         /* Data to be serialised */
         .left_chan  (sine_value),
         .right_chan (sine_value),
@@ -65,9 +65,9 @@ module top (
         .locked    ()
     );
 
-    uart_rx_deserialise #(
+    uart_rx #(
         .CLK_RATE(24576000)
-    ) uart_rx_deserialise_u1 (
+    ) uart_rx_u1 (
         .clk     (clk),
         .rx_bits (rx_pin),
         .receive (tx_ready),
@@ -75,9 +75,9 @@ module top (
         .rx_byte (data_byte)
     );
   
-    uart_tx_serialise #(
+    uart_tx #(
   	    .CLK_RATE(24576000)
-    ) uart_tx_serialise_u2 (
+    ) uart_tx_u1 (
         .clk     (clk),
         .tx_byte (data_byte),
         .send    (rx_valid),

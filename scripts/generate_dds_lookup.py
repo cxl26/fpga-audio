@@ -18,7 +18,7 @@ with open(midi_table_file, mode='r') as midi_table, open(step_table_file, 'w', )
         frequency = float(row[1])
         step_size_num = 4 * LOOKUP_LENGTH / SAMPLE_FREQUENCY * frequency    # Calculate step size number for each freq
         step_size_str = format(int(step_size_num*(2**CNTR_WIDTH)), "016b")  # Convert to binary string
-        step_table.write(step_size_str + "/n")
+        step_table.write(step_size_str + "\n")
         #print(step_size_num)
 
 print("Generating sine values...")
@@ -26,5 +26,5 @@ with open(sine_table_file, mode='w') as sine_table:
     for t in range(LOOKUP_LENGTH):
         sine_value_num = round(math.sin((t+0.5)/LOOKUP_LENGTH/2*math.pi)*2**(DATA_WIDTH-1))
         sine_value_str = format(int(sine_value_num), "024b")
-        sine_table.write(sine_value_str + "/n")
+        sine_table.write(sine_value_str + "\n")
         #print(sine_value_num)
