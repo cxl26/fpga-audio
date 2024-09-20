@@ -1,2 +1,0 @@
-ROOT_DIR    := /Users/chris.li/Desktop/fpga-audio
-SRC_FILES   := $(shell find $(ROOT_DIR)/source -type f -name "*.v")

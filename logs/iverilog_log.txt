@@ -1,0 +1,2 @@
+VCD info: dumpfile dump.vcd opened for output.
+../source/fifo/tb/async_fifo_tb.v:41: $finish called at 40000 (1s)

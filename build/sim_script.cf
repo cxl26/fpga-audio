@@ -1,0 +1,8 @@
++libdir+../source/clk
++libdir+../source/dds
++libdir+../source/fifo
++libdir+../source/i2s
++libdir+../source/ram
++libdir+../source/uart
++libext+.v
+$(TESTBENCH_FILE)
