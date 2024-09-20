@@ -1,3 +1,1 @@
 VCD info: dumpfile dump.vcd opened for output.
-VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
-../tests/top_tb.v:52: $finish called at 4500000 (1ps)

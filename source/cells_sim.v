@@ -1,6 +1,7 @@
 `timescale 1ps / 1ps
-`define SB_DFF_INIT initial Q = 0;
-// `define SB_DFF_INIT
+// `define SB_DFF_INIT initial Q = 0;
+`define SB_DFF_INIT
+`define NO_ICE40_DEFAULT_ASSIGNMENTS
 
 `ifndef NO_ICE40_DEFAULT_ASSIGNMENTS
 `define ICE40_DEFAULT_ASSIGNMENT_V(v) = v
