@@ -1,7 +1,7 @@
-.PHONY: synth sim clean
+.PHONY: synth sim clean all
 
-TESTBENCH_FILE = ../source/fifo/tb/async_fifo_tb.v
-TOPLEVEL_FILE  = ../source/fifo/async_fifo.v
+TESTBENCH_FILE = ../tests/top_tb.v
+TOPLEVEL_FILE  = ../source/top.v
 
 synth:
 	export TOPLEVEL_FILE=$(TOPLEVEL_FILE)
@@ -12,8 +12,10 @@ synth:
 
 sim:
 	export TESTBENCH_FILE=$(TESTBENCH_FILE)
-	iverilog -o fpga-audio.out -c sim_script.cf
+	iverilog -o fpga-audio.out -g2012 -c sim_script.cf
 	vvp -l ../logs/iverilog_log.txt fpga-audio.out
+
+all: sim synth
 
 clean:
 	rm -f *.json *.blif *.asc *.bin

@@ -4,5 +4,7 @@
 +libdir+../source/i2s
 +libdir+../source/ram
 +libdir+../source/uart
++libdir+../source
 +libext+.v
+-l ../source/cells_sim.v
 $(TESTBENCH_FILE)

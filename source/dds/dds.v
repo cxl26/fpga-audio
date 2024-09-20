@@ -3,22 +3,21 @@ module dds #(
     parameter ADDR_WDTH = 12,
     parameter CNTR_WDTH = 4
 ) (
-    input  wire clk,
-    input  wire change_note,
-    input  wire query_sine,
-    input  wire note,
-    output reg  sine
+    input  wire                 clk,
+    input  wire                 change_note,
+    input  wire                 query_sine,
+    input  wire [6:0]           note,
+    output reg  [DATA_WDTH-1:0] sine
 );
-    wire strobe;
-    reg  step_size;
+    reg  [ADDR_WDTH+CNTR_WDTH-1:0] step_size;
 
     /* Connections for note lookup */
-    reg note_lookup;
-    wire note_value;
+    reg  [6:0]                     note_lookup = 0;
+    wire [ADDR_WDTH+CNTR_WDTH-1:0] note_value;
 
     /* Connections for sine lookup */
-    reg  sine_lookup;
-    wire sine_value;
+    reg  [ADDR_WDTH+CNTR_WDTH-1:0] sine_lookup = 0;
+    wire [DATA_WDTH-1:0]           sine_value;
     
     // Very generous registers here probably don't need so much pipelining
     // Can reduce later on to reduce latency (not that it matters)
@@ -52,8 +51,8 @@ module dds #(
     end
 
     note_lookup #(
-        .DATA_WDTH(),
-        .ADDR_WDTH(7),
+        .DATA_WDTH(ADDR_WDTH+CNTR_WDTH),
+        .ADDR_WDTH(7)
     ) note_lookup_u1 (
         .clk         (clk),
         .note_lookup (note_lookup),
@@ -61,10 +60,10 @@ module dds #(
     );
 
     sine_lookup #(
-        .DATA_WDTH   (),
-        .ADDR_WDTH   (),
-        .CNTR_WDTH   (),
-    ) note_lookup_u1 (
+        .DATA_WDTH   (DATA_WDTH),
+        .ADDR_WDTH   (ADDR_WDTH),
+        .CNTR_WDTH   (CNTR_WDTH)
+    ) sine_lookup_u1 (
         .clk         (clk),
         .sine_lookup (sine_lookup),
         .sine_value  (sine_value)
