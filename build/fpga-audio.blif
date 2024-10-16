@@ -7,29 +7,199 @@
 .names $true
 1
 .names $undef
-.subckt $paramod\dds\DATA_WDTH?24\ADDR_WDTH?12\CNTR_WDTH?4 change_note=dds_u1_change_note clk=clk note[0]=data_byte[0] note[1]=data_byte[1] note[2]=data_byte[2] note[3]=data_byte[3] note[4]=data_byte[4] note[5]=data_byte[5] note[6]=data_byte[6] query_sine=query_sine sine[0]=sine_value[0] sine[1]=sine_value[1] sine[2]=sine_value[2] sine[3]=sine_value[3] sine[4]=sine_value[4] sine[5]=sine_value[5] sine[6]=sine_value[6] sine[7]=sine_value[7] sine[8]=sine_value[8] sine[9]=sine_value[9] sine[10]=sine_value[10] sine[11]=sine_value[11] sine[12]=sine_value[12] sine[13]=sine_value[13] sine[14]=sine_value[14] sine[15]=sine_value[15] sine[16]=sine_value[16] sine[17]=sine_value[17] sine[18]=sine_value[18] sine[19]=sine_value[19] sine[20]=sine_value[20] sine[21]=sine_value[21] sine[22]=sine_value[22] sine[23]=sine_value[23]
-.subckt $paramod$bad454e227c2498fe55d6f77591c45383b48ca8d\i2s_tx clk=clk left_chan[0]=sine_value[0] left_chan[1]=sine_value[1] left_chan[2]=sine_value[2] left_chan[3]=sine_value[3] left_chan[4]=sine_value[4] left_chan[5]=sine_value[5] left_chan[6]=sine_value[6] left_chan[7]=sine_value[7] left_chan[8]=sine_value[8] left_chan[9]=sine_value[9] left_chan[10]=sine_value[10] left_chan[11]=sine_value[11] left_chan[12]=sine_value[12] left_chan[13]=sine_value[13] left_chan[14]=sine_value[14] left_chan[15]=sine_value[15] left_chan[16]=sine_value[16] left_chan[17]=sine_value[17] left_chan[18]=sine_value[18] left_chan[19]=sine_value[19] left_chan[20]=sine_value[20] left_chan[21]=sine_value[21] left_chan[22]=sine_value[22] left_chan[23]=sine_value[23] load=query_sine right_chan[0]=sine_value[0] right_chan[1]=sine_value[1] right_chan[2]=sine_value[2] right_chan[3]=sine_value[3] right_chan[4]=sine_value[4] right_chan[5]=sine_value[5] right_chan[6]=sine_value[6] right_chan[7]=sine_value[7] right_chan[8]=sine_value[8] right_chan[9]=sine_value[9] right_chan[10]=sine_value[10] right_chan[11]=sine_value[11] right_chan[12]=sine_value[12] right_chan[13]=sine_value[13] right_chan[14]=sine_value[14] right_chan[15]=sine_value[15] right_chan[16]=sine_value[16] right_chan[17]=sine_value[17] right_chan[18]=sine_value[18] right_chan[19]=sine_value[19] right_chan[20]=sine_value[20] right_chan[21]=sine_value[21] right_chan[22]=sine_value[22] right_chan[23]=sine_value[23] sck=out_sck sd=out_sd ws=out_ws
-.subckt SB_DFFE C=clk D=led1_SB_DFFE_Q_D E=rx_valid Q=led1
-.subckt SB_LUT4 I0=data_byte[0] I1=led1_SB_DFFE_Q_D_SB_LUT4_O_I1 I2=led1_SB_DFFE_Q_D_SB_LUT4_O_I2 I3=led1_SB_DFFE_Q_D_SB_LUT4_O_I3 O=led1_SB_DFFE_Q_D
-.subckt SB_LUT4 I0=$false I1=$false I2=data_byte[1] I3=data_byte[3] O=led1_SB_DFFE_Q_D_SB_LUT4_O_I1
-.subckt SB_LUT4 I0=$false I1=data_byte[2] I2=data_byte[3] I3=data_byte[1] O=led1_SB_DFFE_Q_D_SB_LUT4_O_I2
-.subckt SB_LUT4 I0=data_byte[6] I1=data_byte[7] I2=data_byte[4] I3=data_byte[5] O=led1_SB_DFFE_Q_D_SB_LUT4_O_I3
-.subckt SB_DFFE C=clk D=led2_SB_DFFE_Q_D E=rx_valid Q=led2
-.subckt SB_LUT4 I0=$false I1=led1_SB_DFFE_Q_D_SB_LUT4_O_I1 I2=led2_SB_DFFE_Q_D_SB_LUT4_O_I2 I3=led2_SB_DFFE_Q_D_SB_LUT4_O_I3 O=led2_SB_DFFE_Q_D
-.subckt SB_LUT4 I0=$false I1=$false I2=data_byte[0] I3=led1_SB_DFFE_Q_D_SB_LUT4_O_I3 O=led2_SB_DFFE_Q_D_SB_LUT4_O_I2
-.subckt SB_LUT4 I0=led3_SB_DFFE_Q_D_SB_LUT4_O_I2 I1=led1_SB_DFFE_Q_D_SB_LUT4_O_I2 I2=led1_SB_DFFE_Q_D_SB_LUT4_O_I3 I3=data_byte[0] O=led2_SB_DFFE_Q_D_SB_LUT4_O_I3
-.subckt SB_DFFE C=clk D=led3_SB_DFFE_Q_D E=rx_valid Q=led3
-.subckt SB_LUT4 I0=led1_SB_DFFE_Q_D I1=data_byte[0] I2=led3_SB_DFFE_Q_D_SB_LUT4_O_I2 I3=led1_SB_DFFE_Q_D_SB_LUT4_O_I3 O=led3_SB_DFFE_Q_D
-.subckt SB_LUT4 I0=$false I1=data_byte[2] I2=data_byte[1] I3=data_byte[3] O=led3_SB_DFFE_Q_D_SB_LUT4_O_I2
-.subckt SB_DFFE C=clk D=led4_SB_DFFE_Q_D E=rx_valid Q=led4
-.subckt SB_LUT4 I0=data_byte[2] I1=data_byte[3] I2=led2_SB_DFFE_Q_D_SB_LUT4_O_I2 I3=led2_SB_DFFE_Q_D_SB_LUT4_O_I3 O=led4_SB_DFFE_Q_D
+.subckt $paramod\dds\DATA_WDTH?24\ADDR_WDTH?12\CNTR_WDTH?4 clk=clk note[0]=note_value_1[0] note[1]=note_value_1[1] note[2]=note_value_1[2] note[3]=note_value_1[3] note[4]=note_value_1[4] note[5]=note_value_1[5] note[6]=note_value_1[6] query_sine=query_sine sine[0]=sine_value_1[0] sine[1]=sine_value_1[1] sine[2]=sine_value_1[2] sine[3]=sine_value_1[3] sine[4]=sine_value_1[4] sine[5]=sine_value_1[5] sine[6]=sine_value_1[6] sine[7]=sine_value_1[7] sine[8]=sine_value_1[8] sine[9]=sine_value_1[9] sine[10]=sine_value_1[10] sine[11]=sine_value_1[11] sine[12]=sine_value_1[12] sine[13]=sine_value_1[13] sine[14]=sine_value_1[14] sine[15]=sine_value_1[15] sine[16]=sine_value_1[16] sine[17]=sine_value_1[17] sine[18]=sine_value_1[18] sine[19]=sine_value_1[19] sine[20]=sine_value_1[20] sine[21]=sine_value_1[21] sine[22]=sine_value_1[22] sine[23]=sine_value_1[23]
+.subckt $paramod\dds\DATA_WDTH?24\ADDR_WDTH?12\CNTR_WDTH?4 clk=clk note[0]=note_value_2[0] note[1]=note_value_2[1] note[2]=note_value_2[2] note[3]=note_value_2[3] note[4]=note_value_2[4] note[5]=note_value_2[5] note[6]=note_value_2[6] query_sine=query_sine sine[0]=sine_value_2[0] sine[1]=sine_value_2[1] sine[2]=sine_value_2[2] sine[3]=sine_value_2[3] sine[4]=sine_value_2[4] sine[5]=sine_value_2[5] sine[6]=sine_value_2[6] sine[7]=sine_value_2[7] sine[8]=sine_value_2[8] sine[9]=sine_value_2[9] sine[10]=sine_value_2[10] sine[11]=sine_value_2[11] sine[12]=sine_value_2[12] sine[13]=sine_value_2[13] sine[14]=sine_value_2[14] sine[15]=sine_value_2[15] sine[16]=sine_value_2[16] sine[17]=sine_value_2[17] sine[18]=sine_value_2[18] sine[19]=sine_value_2[19] sine[20]=sine_value_2[20] sine[21]=sine_value_2[21] sine[22]=sine_value_2[22] sine[23]=sine_value_2[23]
+.subckt $paramod$bad454e227c2498fe55d6f77591c45383b48ca8d\i2s_tx clk=clk left_chan[0]=mixed_sine_value[0] left_chan[1]=mixed_sine_value[1] left_chan[2]=mixed_sine_value[2] left_chan[3]=mixed_sine_value[3] left_chan[4]=mixed_sine_value[4] left_chan[5]=mixed_sine_value[5] left_chan[6]=mixed_sine_value[6] left_chan[7]=mixed_sine_value[7] left_chan[8]=mixed_sine_value[8] left_chan[9]=mixed_sine_value[9] left_chan[10]=mixed_sine_value[10] left_chan[11]=mixed_sine_value[11] left_chan[12]=mixed_sine_value[12] left_chan[13]=mixed_sine_value[13] left_chan[14]=mixed_sine_value[14] left_chan[15]=mixed_sine_value[15] left_chan[16]=mixed_sine_value[16] left_chan[17]=mixed_sine_value[17] left_chan[18]=mixed_sine_value[18] left_chan[19]=mixed_sine_value[19] left_chan[20]=mixed_sine_value[20] left_chan[21]=mixed_sine_value[21] left_chan[22]=mixed_sine_value[23] left_chan[23]=mixed_sine_value[23] load=query_sine right_chan[0]=mixed_sine_value[0] right_chan[1]=mixed_sine_value[1] right_chan[2]=mixed_sine_value[2] right_chan[3]=mixed_sine_value[3] right_chan[4]=mixed_sine_value[4] right_chan[5]=mixed_sine_value[5] right_chan[6]=mixed_sine_value[6] right_chan[7]=mixed_sine_value[7] right_chan[8]=mixed_sine_value[8] right_chan[9]=mixed_sine_value[9] right_chan[10]=mixed_sine_value[10] right_chan[11]=mixed_sine_value[11] right_chan[12]=mixed_sine_value[12] right_chan[13]=mixed_sine_value[13] right_chan[14]=mixed_sine_value[14] right_chan[15]=mixed_sine_value[15] right_chan[16]=mixed_sine_value[16] right_chan[17]=mixed_sine_value[17] right_chan[18]=mixed_sine_value[18] right_chan[19]=mixed_sine_value[19] right_chan[20]=mixed_sine_value[20] right_chan[21]=mixed_sine_value[21] right_chan[22]=mixed_sine_value[23] right_chan[23]=mixed_sine_value[23] sck=out_sck sd=out_sd ws=out_ws
+.subckt SB_LUT4 I0=note_value_1[4] I1=note_value_1[5] I2=note_value_1[6] I3=led1_SB_LUT4_O_I3 O=led1
+.subckt SB_LUT4 I0=note_value_1[0] I1=note_value_1[1] I2=note_value_1[2] I3=note_value_1[3] O=led1_SB_LUT4_O_I3
+.subckt SB_LUT4 I0=note_value_2[4] I1=note_value_2[5] I2=note_value_2[6] I3=led2_SB_LUT4_O_I3 O=led2
+.subckt SB_LUT4 I0=note_value_2[0] I1=note_value_2[1] I2=note_value_2[2] I3=note_value_2[3] O=led2_SB_LUT4_O_I3
+.subckt SB_DFFE C=clk D=data_byte[4] E=led5_SB_DFFE_Q_E Q=led5
+.subckt SB_LUT4 I0=$false I1=data_byte[1] I2=led5_SB_DFFE_Q_E_SB_LUT4_O_I2 I3=midi_fsm_u1_new_byte_valid O=led5_SB_DFFE_Q_E
+.subckt SB_LUT4 I0=data_byte[0] I1=data_byte[2] I2=data_byte[3] I3=data_byte[7] O=led5_SB_DFFE_Q_E_SB_LUT4_O_I2
+.subckt midi_fsm clk=clk new_byte_valid=midi_fsm_u1_new_byte_valid new_byte_value[0]=data_byte[0] new_byte_value[1]=data_byte[1] new_byte_value[2]=data_byte[2] new_byte_value[3]=data_byte[3] new_byte_value[4]=data_byte[4] new_byte_value[5]=data_byte[5] new_byte_value[6]=data_byte[6] new_byte_value[7]=data_byte[7] note_values[0]=note_value_1[0] note_values[1]=note_value_1[1] note_values[2]=note_value_1[2] note_values[3]=note_value_1[3] note_values[4]=note_value_1[4] note_values[5]=note_value_1[5] note_values[6]=note_value_1[6] note_values[7]=note_value_2[0] note_values[8]=note_value_2[1] note_values[9]=note_value_2[2] note_values[10]=note_value_2[3] note_values[11]=note_value_2[4] note_values[12]=note_value_2[5] note_values[13]=note_value_2[6] note_values[14]=midi_fsm_u1_note_values[0] note_values[15]=midi_fsm_u1_note_values[1] note_values[16]=midi_fsm_u1_note_values[2] note_values[17]=midi_fsm_u1_note_values[3] note_values[18]=midi_fsm_u1_note_values[4] note_values[19]=midi_fsm_u1_note_values[5] note_values[20]=midi_fsm_u1_note_values[6] note_values[21]=midi_fsm_u1_note_values[7] note_values[22]=midi_fsm_u1_note_values[8] note_values[23]=midi_fsm_u1_note_values[9] note_values[24]=midi_fsm_u1_note_values[10] note_values[25]=midi_fsm_u1_note_values[11] note_values[26]=midi_fsm_u1_note_values[12] note_values[27]=midi_fsm_u1_note_values[13] velocity_values[0]=velocity_value_1[0] velocity_values[1]=velocity_value_1[1] velocity_values[2]=velocity_value_1[2] velocity_values[3]=velocity_value_1[3] velocity_values[4]=velocity_value_1[4] velocity_values[5]=velocity_value_1[5] velocity_values[6]=velocity_value_1[6] velocity_values[7]=velocity_value_2[0] velocity_values[8]=velocity_value_2[1] velocity_values[9]=velocity_value_2[2] velocity_values[10]=velocity_value_2[3] velocity_values[11]=velocity_value_2[4] velocity_values[12]=velocity_value_2[5] velocity_values[13]=velocity_value_2[6] velocity_values[14]=midi_fsm_u1_velocity_values[0] velocity_values[15]=midi_fsm_u1_velocity_values[1] velocity_values[16]=midi_fsm_u1_velocity_values[2] velocity_values[17]=midi_fsm_u1_velocity_values[3] velocity_values[18]=midi_fsm_u1_velocity_values[4] velocity_values[19]=midi_fsm_u1_velocity_values[5] velocity_values[20]=midi_fsm_u1_velocity_values[6] velocity_values[21]=midi_fsm_u1_velocity_values[7] velocity_values[22]=midi_fsm_u1_velocity_values[8] velocity_values[23]=midi_fsm_u1_velocity_values[9] velocity_values[24]=midi_fsm_u1_velocity_values[10] velocity_values[25]=midi_fsm_u1_velocity_values[11] velocity_values[26]=midi_fsm_u1_velocity_values[12] velocity_values[27]=midi_fsm_u1_velocity_values[13]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[7] I2=sine_value_2[7] I3=mixed_sine_value_SB_LUT4_O_I3[5] O=mixed_sine_value[5]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[6] I2=sine_value_2[6] I3=mixed_sine_value_SB_LUT4_O_I3[4] O=mixed_sine_value[4]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[19] I2=sine_value_2[19] I3=mixed_sine_value_SB_LUT4_O_I3[17] O=mixed_sine_value[17]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[18] I2=sine_value_2[18] I3=mixed_sine_value_SB_LUT4_O_I3[16] O=mixed_sine_value[16]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[17] I2=sine_value_2[17] I3=mixed_sine_value_SB_LUT4_O_I3[15] O=mixed_sine_value[15]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[16] I2=sine_value_2[16] I3=mixed_sine_value_SB_LUT4_O_I3[14] O=mixed_sine_value[14]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[15] I2=sine_value_2[15] I3=mixed_sine_value_SB_LUT4_O_I3[13] O=mixed_sine_value[13]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[14] I2=sine_value_2[14] I3=mixed_sine_value_SB_LUT4_O_I3[12] O=mixed_sine_value[12]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[13] I2=sine_value_2[13] I3=mixed_sine_value_SB_LUT4_O_I3[11] O=mixed_sine_value[11]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[12] I2=sine_value_2[12] I3=mixed_sine_value_SB_LUT4_O_I3[10] O=mixed_sine_value[10]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[2] I2=sine_value_2[2] I3=$false O=mixed_sine_value[0]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[11] I2=sine_value_2[11] I3=mixed_sine_value_SB_LUT4_O_I3[9] O=mixed_sine_value[9]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[5] I2=sine_value_2[5] I3=mixed_sine_value_SB_LUT4_O_I3[3] O=mixed_sine_value[3]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[10] I2=sine_value_2[10] I3=mixed_sine_value_SB_LUT4_O_I3[8] O=mixed_sine_value[8]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[9] I2=sine_value_2[9] I3=mixed_sine_value_SB_LUT4_O_I3[7] O=mixed_sine_value[7]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[8] I2=sine_value_2[8] I3=mixed_sine_value_SB_LUT4_O_I3[6] O=mixed_sine_value[6]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[4] I2=sine_value_2[4] I3=mixed_sine_value_SB_LUT4_O_I3[2] O=mixed_sine_value[2]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[23] I2=sine_value_2[23] I3=mixed_sine_value_SB_LUT4_O_I3[22] O=mixed_sine_value[23]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[23] I2=sine_value_2[23] I3=mixed_sine_value_SB_LUT4_O_I3[21] O=mixed_sine_value[21]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[22] I2=sine_value_2[22] I3=mixed_sine_value_SB_LUT4_O_I3[20] O=mixed_sine_value[20]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[3] I2=sine_value_2[3] I3=mixed_sine_value_SB_LUT4_O_I3[1] O=mixed_sine_value[1]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[21] I2=sine_value_2[21] I3=mixed_sine_value_SB_LUT4_O_I3[19] O=mixed_sine_value[19]
+.subckt SB_LUT4 I0=$false I1=sine_value_1[20] I2=sine_value_2[20] I3=mixed_sine_value_SB_LUT4_O_I3[18] O=mixed_sine_value[18]
 .subckt pll clock_in=sys_clk clock_out=clk
-.subckt SB_LUT4 I0=$false I1=$false I2=rx_valid I3=tx_ready O=dds_u1_change_note
+.subckt SB_LUT4 I0=$false I1=$false I2=rx_valid I3=tx_ready O=midi_fsm_u1_new_byte_valid
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[9] CO=mixed_sine_value_SB_LUT4_O_I3[10] I0=sine_value_1[11] I1=sine_value_2[11]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[8] CO=mixed_sine_value_SB_LUT4_O_I3[9] I0=sine_value_1[10] I1=sine_value_2[10]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[1] CO=mixed_sine_value_SB_LUT4_O_I3[2] I0=sine_value_1[3] I1=sine_value_2[3]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[19] CO=mixed_sine_value_SB_LUT4_O_I3[20] I0=sine_value_1[21] I1=sine_value_2[21]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[18] CO=mixed_sine_value_SB_LUT4_O_I3[19] I0=sine_value_1[20] I1=sine_value_2[20]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[17] CO=mixed_sine_value_SB_LUT4_O_I3[18] I0=sine_value_1[19] I1=sine_value_2[19]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[16] CO=mixed_sine_value_SB_LUT4_O_I3[17] I0=sine_value_1[18] I1=sine_value_2[18]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[15] CO=mixed_sine_value_SB_LUT4_O_I3[16] I0=sine_value_1[17] I1=sine_value_2[17]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[14] CO=mixed_sine_value_SB_LUT4_O_I3[15] I0=sine_value_1[16] I1=sine_value_2[16]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[13] CO=mixed_sine_value_SB_LUT4_O_I3[14] I0=sine_value_1[15] I1=sine_value_2[15]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[12] CO=mixed_sine_value_SB_LUT4_O_I3[13] I0=sine_value_1[14] I1=sine_value_2[14]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[11] CO=mixed_sine_value_SB_LUT4_O_I3[12] I0=sine_value_1[13] I1=sine_value_2[13]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[7] CO=mixed_sine_value_SB_LUT4_O_I3[8] I0=sine_value_1[9] I1=sine_value_2[9]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[10] CO=mixed_sine_value_SB_LUT4_O_I3[11] I0=sine_value_1[12] I1=sine_value_2[12]
+.subckt SB_CARRY CI=$false CO=mixed_sine_value_SB_LUT4_O_I3[1] I0=sine_value_1[2] I1=sine_value_2[2]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[6] CO=mixed_sine_value_SB_LUT4_O_I3[7] I0=sine_value_1[8] I1=sine_value_2[8]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[5] CO=mixed_sine_value_SB_LUT4_O_I3[6] I0=sine_value_1[7] I1=sine_value_2[7]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[4] CO=mixed_sine_value_SB_LUT4_O_I3[5] I0=sine_value_1[6] I1=sine_value_2[6]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[3] CO=mixed_sine_value_SB_LUT4_O_I3[4] I0=sine_value_1[5] I1=sine_value_2[5]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[2] CO=mixed_sine_value_SB_LUT4_O_I3[3] I0=sine_value_1[4] I1=sine_value_2[4]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[21] CO=mixed_sine_value_SB_LUT4_O_I3[22] I0=sine_value_1[23] I1=sine_value_2[23]
+.subckt SB_CARRY CI=mixed_sine_value_SB_LUT4_O_I3[20] CO=mixed_sine_value_SB_LUT4_O_I3[21] I0=sine_value_1[22] I1=sine_value_2[22]
 .subckt $paramod\uart_rx\CLK_RATE?24576000 clk=clk receive=tx_ready rx_bits=rx_pin rx_byte[0]=data_byte[0] rx_byte[1]=data_byte[1] rx_byte[2]=data_byte[2] rx_byte[3]=data_byte[3] rx_byte[4]=data_byte[4] rx_byte[5]=data_byte[5] rx_byte[6]=data_byte[6] rx_byte[7]=data_byte[7] valid=rx_valid
 .subckt $paramod\uart_tx\CLK_RATE?24576000 clk=clk ready=tx_ready send=rx_valid tx_bits=tx_pin tx_byte[0]=data_byte[0] tx_byte[1]=data_byte[1] tx_byte[2]=data_byte[2] tx_byte[3]=data_byte[3] tx_byte[4]=data_byte[4] tx_byte[5]=data_byte[5] tx_byte[6]=data_byte[6] tx_byte[7]=data_byte[7]
-.names $true led5
+.names $false mixed_sine_value_SB_LUT4_O_I3[0]
+1 1
+.names $undef led3
+1 1
+.names $undef led4
+1 1
+.names mixed_sine_value[23] mixed_sine_value[22]
+1 1
+.names $undef note_value_3[0]
+1 1
+.names $undef note_value_3[1]
+1 1
+.names $undef note_value_3[2]
+1 1
+.names $undef note_value_3[3]
+1 1
+.names $undef note_value_3[4]
+1 1
+.names $undef note_value_3[5]
+1 1
+.names $undef note_value_3[6]
+1 1
+.names $undef note_value_4[0]
+1 1
+.names $undef note_value_4[1]
+1 1
+.names $undef note_value_4[2]
+1 1
+.names $undef note_value_4[3]
+1 1
+.names $undef note_value_4[4]
+1 1
+.names $undef note_value_4[5]
+1 1
+.names $undef note_value_4[6]
 1 1
 .names clk out_mclk
+1 1
+.names $false sine_value_3[0]
+1 1
+.names $false sine_value_3[1]
+1 1
+.names $false sine_value_3[2]
+1 1
+.names $false sine_value_3[3]
+1 1
+.names $false sine_value_3[4]
+1 1
+.names $false sine_value_3[5]
+1 1
+.names $false sine_value_3[6]
+1 1
+.names $false sine_value_3[7]
+1 1
+.names $false sine_value_3[8]
+1 1
+.names $false sine_value_3[9]
+1 1
+.names $false sine_value_3[10]
+1 1
+.names $false sine_value_3[11]
+1 1
+.names $false sine_value_3[12]
+1 1
+.names $false sine_value_3[13]
+1 1
+.names $false sine_value_3[14]
+1 1
+.names $false sine_value_3[15]
+1 1
+.names $false sine_value_3[16]
+1 1
+.names $false sine_value_3[17]
+1 1
+.names $false sine_value_3[18]
+1 1
+.names $false sine_value_3[19]
+1 1
+.names $false sine_value_3[20]
+1 1
+.names $false sine_value_3[21]
+1 1
+.names $false sine_value_3[22]
+1 1
+.names $false sine_value_3[23]
+1 1
+.names $false sine_value_4[0]
+1 1
+.names $false sine_value_4[1]
+1 1
+.names $false sine_value_4[2]
+1 1
+.names $false sine_value_4[3]
+1 1
+.names $false sine_value_4[4]
+1 1
+.names $false sine_value_4[5]
+1 1
+.names $false sine_value_4[6]
+1 1
+.names $false sine_value_4[7]
+1 1
+.names $false sine_value_4[8]
+1 1
+.names $false sine_value_4[9]
+1 1
+.names $false sine_value_4[10]
+1 1
+.names $false sine_value_4[11]
+1 1
+.names $false sine_value_4[12]
+1 1
+.names $false sine_value_4[13]
+1 1
+.names $false sine_value_4[14]
+1 1
+.names $false sine_value_4[15]
+1 1
+.names $false sine_value_4[16]
+1 1
+.names $false sine_value_4[17]
+1 1
+.names $false sine_value_4[18]
+1 1
+.names $false sine_value_4[19]
+1 1
+.names $false sine_value_4[20]
+1 1
+.names $false sine_value_4[21]
+1 1
+.names $false sine_value_4[22]
+1 1
+.names $false sine_value_4[23]
 1 1
 .end
 
@@ -99,44 +269,46 @@
 .subckt SB_DFFESR C=clk D=sd_SB_DFFESR_Q_D E=strobe Q=sd R=sd_SB_DFFESR_Q_R
 .subckt SB_LUT4 I0=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0 I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1 I2=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2 I3=sd_SB_DFFESR_Q_D_SB_LUT4_O_I3 O=sd_SB_DFFESR_Q_D
 .subckt SB_LUT4 I0=ws_counter[3] I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1 I2=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2 I3=ws O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0
-.subckt SB_LUT4 I0=$false I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I1 I2=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I2 I3=ws_counter[1] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1
-.subckt SB_LUT4 I0=right_buff[8] I1=right_buff[9] I2=ws_counter[2] I3=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I3 O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I1
-.subckt SB_LUT4 I0=right_buff[12] I1=right_buff[13] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I3
-.subckt SB_LUT4 I0=right_buff[10] I1=right_buff[14] I2=ws_counter[0] I3=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I3 O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I2
-.subckt SB_LUT4 I0=right_buff[11] I1=right_buff[15] I2=ws_counter[0] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I3
-.subckt SB_LUT4 I0=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I0 I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I1 I2=ws_counter[1] I3=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I3 O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2
-.subckt SB_LUT4 I0=right_buff[0] I1=right_buff[4] I2=ws_counter[0] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I0
-.subckt SB_LUT4 I0=right_buff[1] I1=right_buff[5] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I1
+.subckt SB_LUT4 I0=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I0 I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I1 I2=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I2 I3=ws_counter[1] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1
+.subckt SB_LUT4 I0=left_buff[11] I1=left_buff[15] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I0
+.subckt SB_LUT4 I0=left_buff[10] I1=left_buff[14] I2=ws_counter[0] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I1
+.subckt SB_LUT4 I0=left_buff[8] I1=left_buff[9] I2=ws_counter[2] I3=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I3 O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I2
+.subckt SB_LUT4 I0=left_buff[12] I1=left_buff[13] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I3
+.subckt SB_LUT4 I0=ws_counter[1] I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I1 I2=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I2 I3=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I3 O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2
+.subckt SB_LUT4 I0=left_buff[0] I1=left_buff[4] I2=ws_counter[0] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I1
+.subckt SB_LUT4 I0=left_buff[1] I1=left_buff[5] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I2
 .subckt SB_LUT4 I0=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_LUT4_O_I0 I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_LUT4_O_I1 I2=ws_counter[1] I3=ws_counter[3] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I3
-.subckt SB_LUT4 I0=right_buff[2] I1=right_buff[6] I2=ws_counter[0] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_LUT4_O_I0
-.subckt SB_LUT4 I0=right_buff[3] I1=right_buff[7] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_LUT4_O_I1
+.subckt SB_LUT4 I0=left_buff[3] I1=left_buff[7] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_LUT4_O_I0
+.subckt SB_LUT4 I0=left_buff[2] I1=left_buff[6] I2=ws_counter[0] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_LUT4_O_I1
 .subckt SB_LUT4 I0=ws_counter[3] I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1 I2=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2 I3=ws O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1
-.subckt SB_LUT4 I0=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I0 I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I1 I2=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I2 I3=ws_counter[1] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1
-.subckt SB_LUT4 I0=left_buff[11] I1=left_buff[15] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I0
-.subckt SB_LUT4 I0=left_buff[10] I1=left_buff[14] I2=ws_counter[0] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I1
-.subckt SB_LUT4 I0=left_buff[8] I1=left_buff[9] I2=ws_counter[2] I3=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I3 O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I2
-.subckt SB_LUT4 I0=left_buff[12] I1=left_buff[13] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I3
-.subckt SB_LUT4 I0=ws_counter[1] I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I1 I2=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I2 I3=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I3 O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2
-.subckt SB_LUT4 I0=left_buff[0] I1=left_buff[4] I2=ws_counter[0] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I1
-.subckt SB_LUT4 I0=left_buff[1] I1=left_buff[5] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I2
+.subckt SB_LUT4 I0=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I0 I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I1 I2=ws_counter[1] I3=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I3 O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1
+.subckt SB_LUT4 I0=$false I1=right_buff[8] I2=right_buff[12] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I0
+.subckt SB_LUT4 I0=$false I1=right_buff[9] I2=right_buff[13] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I1
+.subckt SB_LUT4 I0=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I3_SB_LUT4_O_I0 I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I3_SB_LUT4_O_I1 I2=ws_counter[1] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I3
+.subckt SB_LUT4 I0=$false I1=right_buff[10] I2=right_buff[14] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I3_SB_LUT4_O_I0
+.subckt SB_LUT4 I0=$false I1=right_buff[11] I2=right_buff[15] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I1_SB_LUT4_O_I3_SB_LUT4_O_I1
+.subckt SB_LUT4 I0=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I0 I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I1 I2=ws_counter[1] I3=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I3 O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2
+.subckt SB_LUT4 I0=right_buff[0] I1=right_buff[4] I2=ws_counter[0] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I0
+.subckt SB_LUT4 I0=right_buff[1] I1=right_buff[5] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I1
 .subckt SB_LUT4 I0=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_LUT4_O_I0 I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_LUT4_O_I1 I2=ws_counter[1] I3=ws_counter[3] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I3
-.subckt SB_LUT4 I0=left_buff[3] I1=left_buff[7] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_LUT4_O_I0
-.subckt SB_LUT4 I0=left_buff[2] I1=left_buff[6] I2=ws_counter[0] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_LUT4_O_I1
+.subckt SB_LUT4 I0=right_buff[2] I1=right_buff[6] I2=ws_counter[0] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_LUT4_O_I0
+.subckt SB_LUT4 I0=right_buff[3] I1=right_buff[7] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I1_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_LUT4_O_I1
 .subckt SB_LUT4 I0=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0 I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I1 I2=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2 I3=ws O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2
-.subckt SB_LUT4 I0=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_O_I0 I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_O_I1 I2=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_O_I2 I3=ws_counter[1] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0
-.subckt SB_LUT4 I0=left_buff[18] I1=left_buff[22] I2=ws_counter[0] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_O_I0
-.subckt SB_LUT4 I0=left_buff[19] I1=left_buff[23] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_O_I1
-.subckt SB_LUT4 I0=left_buff[16] I1=left_buff[20] I2=ws_counter[0] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_O_I2
-.subckt SB_LUT4 I0=left_buff[17] I1=left_buff[21] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I1
-.subckt SB_LUT4 I0=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I0 I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I1 I2=ws I3=ws_counter[1] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2
-.subckt SB_LUT4 I0=right_buff[18] I1=right_buff[19] I2=ws_counter[2] I3=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_O_I3 O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I0
-.subckt SB_LUT4 I0=right_buff[22] I1=right_buff[23] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_O_I3
-.subckt SB_LUT4 I0=right_buff[16] I1=right_buff[17] I2=ws_counter[2] I3=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_O_I3 O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I1
-.subckt SB_LUT4 I0=right_buff[20] I1=right_buff[21] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_O_I3
+.subckt SB_LUT4 I0=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_O_I0 I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_O_I1 I2=ws_counter[0] I3=ws_counter[1] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0
+.subckt SB_LUT4 I0=$false I1=right_buff[19] I2=right_buff[23] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_O_I0
+.subckt SB_LUT4 I0=$false I1=right_buff[18] I2=right_buff[22] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I0_SB_LUT4_O_I1
+.subckt SB_LUT4 I0=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_O_I0 I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_O_I1 I2=ws_counter[1] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I1
+.subckt SB_LUT4 I0=$false I1=right_buff[17] I2=right_buff[21] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_O_I0
+.subckt SB_LUT4 I0=$false I1=right_buff[16] I2=right_buff[20] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_O_I1
+.subckt SB_LUT4 I0=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I0 I1=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I1 I2=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I2 I3=ws_counter[1] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2
+.subckt SB_LUT4 I0=left_buff[17] I1=left_buff[21] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I0
+.subckt SB_LUT4 I0=left_buff[16] I1=left_buff[20] I2=ws_counter[0] I3=ws_counter[2] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I1
+.subckt SB_LUT4 I0=left_buff[18] I1=left_buff[19] I2=ws_counter[2] I3=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I3 O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I2
+.subckt SB_LUT4 I0=left_buff[22] I1=left_buff[23] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_I3
 .subckt SB_LUT4 I0=$false I1=ws_counter[4] I2=$true I3=ws_counter[3] O=sd_SB_DFFESR_Q_D_SB_LUT4_O_I3
 .subckt SB_LUT4 I0=$false I1=ws_counter[3] I2=sd_SB_DFFESR_Q_R_SB_LUT4_O_I2 I3=sd_SB_DFFESR_Q_R_SB_LUT4_O_I3 O=sd_SB_DFFESR_Q_R
 .subckt SB_LUT4 I0=$false I1=$false I2=ws_counter[3] I3=sd_SB_DFFESR_Q_R_SB_LUT4_O_I2 O=sd_SB_DFFESR_Q_R_SB_LUT4_O_I2_SB_LUT4_I3_O
-.subckt SB_LUT4 I0=ws_counter[4] I1=ws_counter[1] I2=ws_counter[2] I3=ws_counter[0] O=sd_SB_DFFESR_Q_R_SB_LUT4_O_I2
+.subckt SB_LUT4 I0=ws_counter[2] I1=ws_counter[1] I2=ws_counter[4] I3=ws_counter[0] O=sd_SB_DFFESR_Q_R_SB_LUT4_O_I2
 .subckt SB_CARRY CI=ws_counter_SB_DFFESS_Q_4_D_SB_CARRY_CI_CO[4] CO=sd_SB_DFFESR_Q_R_SB_LUT4_O_I3 I0=$false I1=sd_SB_DFFESR_Q_R_SB_LUT4_O_I3_SB_CARRY_CO_I1
 .subckt SB_LUT4 I0=$false I1=$false I2=$false I3=ws_counter[4] O=sd_SB_DFFESR_Q_R_SB_LUT4_O_I3_SB_CARRY_CO_I1
 .subckt SB_LUT4 I0=$false I1=$false I2=sck_SB_DFFE_Q_E I3=sck O=strobe
@@ -175,20 +347,13 @@
 .end
 
 .model $paramod\dds\DATA_WDTH?24\ADDR_WDTH?12\CNTR_WDTH?4
-.inputs clk change_note query_sine note[0] note[1] note[2] note[3] note[4] note[5] note[6]
+.inputs clk query_sine note[0] note[1] note[2] note[3] note[4] note[5] note[6]
 .outputs sine[0] sine[1] sine[2] sine[3] sine[4] sine[5] sine[6] sine[7] sine[8] sine[9] sine[10] sine[11] sine[12] sine[13] sine[14] sine[15] sine[16] sine[17] sine[18] sine[19] sine[20] sine[21] sine[22] sine[23]
 .names $false
 .names $true
 1
 .names $undef
-.subckt SB_DFFE C=clk D=note[6] E=change_note Q=note_lookup[6]
-.subckt SB_DFFE C=clk D=note[5] E=change_note Q=note_lookup[5]
-.subckt SB_DFFE C=clk D=note[4] E=change_note Q=note_lookup[4]
-.subckt SB_DFFE C=clk D=note[3] E=change_note Q=note_lookup[3]
-.subckt SB_DFFE C=clk D=note[2] E=change_note Q=note_lookup[2]
-.subckt SB_DFFE C=clk D=note[1] E=change_note Q=note_lookup[1]
-.subckt SB_DFFE C=clk D=note[0] E=change_note Q=note_lookup[0]
-.subckt $paramod\note_lookup\DATA_WDTH?16\ADDR_WDTH?7 clk=clk note_lookup[0]=note_lookup[0] note_lookup[1]=note_lookup[1] note_lookup[2]=note_lookup[2] note_lookup[3]=note_lookup[3] note_lookup[4]=note_lookup[4] note_lookup[5]=note_lookup[5] note_lookup[6]=note_lookup[6] note_value[0]=note_value[0] note_value[1]=note_value[1] note_value[2]=note_value[2] note_value[3]=note_value[3] note_value[4]=note_value[4] note_value[5]=note_value[5] note_value[6]=note_value[6] note_value[7]=note_value[7] note_value[8]=note_value[8] note_value[9]=note_value[9] note_value[10]=note_value[10] note_value[11]=note_value[11] note_value[12]=note_value[12] note_value[13]=note_value[13] note_value[14]=note_value[14] note_value[15]=note_value[15]
+.subckt $paramod\note_lookup\DATA_WDTH?16\ADDR_WDTH?7 clk=clk note_lookup[0]=note[0] note_lookup[1]=note[1] note_lookup[2]=note[2] note_lookup[3]=note[3] note_lookup[4]=note[4] note_lookup[5]=note[5] note_lookup[6]=note[6] note_value[0]=note_value[0] note_value[1]=note_value[1] note_value[2]=note_value[2] note_value[3]=note_value[3] note_value[4]=note_value[4] note_value[5]=note_value[5] note_value[6]=note_value[6] note_value[7]=note_value[7] note_value[8]=note_value[8] note_value[9]=note_value[9] note_value[10]=note_value[10] note_value[11]=note_value[11] note_value[12]=note_value[12] note_value[13]=note_value[13] note_value[14]=note_value[14] note_value[15]=note_value[15]
 .subckt SB_DFF C=clk D=sine_value[23] Q=sine[23]
 .subckt SB_DFF C=clk D=sine_value[22] Q=sine[22]
 .subckt SB_DFF C=clk D=sine_value[13] Q=sine[13]
@@ -230,21 +395,21 @@
 .subckt SB_DFFE C=clk D=sine_lookup_SB_DFFE_Q_D[7] E=query_sine Q=sine_lookup[7]
 .subckt SB_DFFE C=clk D=sine_lookup_SB_DFFE_Q_D[6] E=query_sine Q=sine_lookup[6]
 .subckt $paramod\sine_lookup\DATA_WDTH?24\ADDR_WDTH?12\CNTR_WDTH?4 clk=clk sine_lookup[0]=sine_lookup[0] sine_lookup[1]=sine_lookup[1] sine_lookup[2]=sine_lookup[2] sine_lookup[3]=sine_lookup[3] sine_lookup[4]=sine_lookup[4] sine_lookup[5]=sine_lookup[5] sine_lookup[6]=sine_lookup[6] sine_lookup[7]=sine_lookup[7] sine_lookup[8]=sine_lookup[8] sine_lookup[9]=sine_lookup[9] sine_lookup[10]=sine_lookup[10] sine_lookup[11]=sine_lookup[11] sine_lookup[12]=sine_lookup[12] sine_lookup[13]=sine_lookup[13] sine_lookup[14]=sine_lookup[14] sine_lookup[15]=sine_lookup[15] sine_value[0]=sine_value[0] sine_value[1]=sine_value[1] sine_value[2]=sine_value[2] sine_value[3]=sine_value[3] sine_value[4]=sine_value[4] sine_value[5]=sine_value[5] sine_value[6]=sine_value[6] sine_value[7]=sine_value[7] sine_value[8]=sine_value[8] sine_value[9]=sine_value[9] sine_value[10]=sine_value[10] sine_value[11]=sine_value[11] sine_value[12]=sine_value[12] sine_value[13]=sine_value[13] sine_value[14]=sine_value[14] sine_value[15]=sine_value[15] sine_value[16]=sine_value[16] sine_value[17]=sine_value[17] sine_value[18]=sine_value[18] sine_value[19]=sine_value[19] sine_value[20]=sine_value[20] sine_value[21]=sine_value[21] sine_value[22]=sine_value[22] sine_value[23]=sine_value[23]
-.subckt SB_CARRY CI=$false CO=step_size_SB_CARRY_I1_CO[1] I0=sine_lookup[0] I1=step_size[0]
-.subckt SB_CARRY CI=step_size_SB_CARRY_I1_CO[9] CO=step_size_SB_CARRY_I1_CO[10] I0=sine_lookup[9] I1=step_size[9]
-.subckt SB_CARRY CI=step_size_SB_CARRY_I1_CO[14] CO=step_size_SB_CARRY_I1_CO[15] I0=sine_lookup[14] I1=step_size[14]
-.subckt SB_CARRY CI=step_size_SB_CARRY_I1_CO[13] CO=step_size_SB_CARRY_I1_CO[14] I0=sine_lookup[13] I1=step_size[13]
-.subckt SB_CARRY CI=step_size_SB_CARRY_I1_CO[12] CO=step_size_SB_CARRY_I1_CO[13] I0=sine_lookup[12] I1=step_size[12]
-.subckt SB_CARRY CI=step_size_SB_CARRY_I1_CO[11] CO=step_size_SB_CARRY_I1_CO[12] I0=sine_lookup[11] I1=step_size[11]
-.subckt SB_CARRY CI=step_size_SB_CARRY_I1_CO[10] CO=step_size_SB_CARRY_I1_CO[11] I0=sine_lookup[10] I1=step_size[10]
-.subckt SB_CARRY CI=step_size_SB_CARRY_I1_CO[8] CO=step_size_SB_CARRY_I1_CO[9] I0=sine_lookup[8] I1=step_size[8]
-.subckt SB_CARRY CI=step_size_SB_CARRY_I1_CO[7] CO=step_size_SB_CARRY_I1_CO[8] I0=sine_lookup[7] I1=step_size[7]
-.subckt SB_CARRY CI=step_size_SB_CARRY_I1_CO[6] CO=step_size_SB_CARRY_I1_CO[7] I0=sine_lookup[6] I1=step_size[6]
-.subckt SB_CARRY CI=step_size_SB_CARRY_I1_CO[5] CO=step_size_SB_CARRY_I1_CO[6] I0=sine_lookup[5] I1=step_size[5]
-.subckt SB_CARRY CI=step_size_SB_CARRY_I1_CO[4] CO=step_size_SB_CARRY_I1_CO[5] I0=sine_lookup[4] I1=step_size[4]
-.subckt SB_CARRY CI=step_size_SB_CARRY_I1_CO[3] CO=step_size_SB_CARRY_I1_CO[4] I0=sine_lookup[3] I1=step_size[3]
-.subckt SB_CARRY CI=step_size_SB_CARRY_I1_CO[2] CO=step_size_SB_CARRY_I1_CO[3] I0=sine_lookup[2] I1=step_size[2]
-.subckt SB_CARRY CI=step_size_SB_CARRY_I1_CO[1] CO=step_size_SB_CARRY_I1_CO[2] I0=sine_lookup[1] I1=step_size[1]
+.subckt SB_CARRY CI=$false CO=step_size_SB_CARRY_I0_CO[1] I0=step_size[0] I1=sine_lookup[0]
+.subckt SB_CARRY CI=step_size_SB_CARRY_I0_CO[9] CO=step_size_SB_CARRY_I0_CO[10] I0=step_size[9] I1=sine_lookup[9]
+.subckt SB_CARRY CI=step_size_SB_CARRY_I0_CO[14] CO=step_size_SB_CARRY_I0_CO[15] I0=step_size[14] I1=sine_lookup[14]
+.subckt SB_CARRY CI=step_size_SB_CARRY_I0_CO[13] CO=step_size_SB_CARRY_I0_CO[14] I0=step_size[13] I1=sine_lookup[13]
+.subckt SB_CARRY CI=step_size_SB_CARRY_I0_CO[12] CO=step_size_SB_CARRY_I0_CO[13] I0=step_size[12] I1=sine_lookup[12]
+.subckt SB_CARRY CI=step_size_SB_CARRY_I0_CO[11] CO=step_size_SB_CARRY_I0_CO[12] I0=step_size[11] I1=sine_lookup[11]
+.subckt SB_CARRY CI=step_size_SB_CARRY_I0_CO[10] CO=step_size_SB_CARRY_I0_CO[11] I0=step_size[10] I1=sine_lookup[10]
+.subckt SB_CARRY CI=step_size_SB_CARRY_I0_CO[8] CO=step_size_SB_CARRY_I0_CO[9] I0=step_size[8] I1=sine_lookup[8]
+.subckt SB_CARRY CI=step_size_SB_CARRY_I0_CO[7] CO=step_size_SB_CARRY_I0_CO[8] I0=step_size[7] I1=sine_lookup[7]
+.subckt SB_CARRY CI=step_size_SB_CARRY_I0_CO[6] CO=step_size_SB_CARRY_I0_CO[7] I0=step_size[6] I1=sine_lookup[6]
+.subckt SB_CARRY CI=step_size_SB_CARRY_I0_CO[5] CO=step_size_SB_CARRY_I0_CO[6] I0=step_size[5] I1=sine_lookup[5]
+.subckt SB_CARRY CI=step_size_SB_CARRY_I0_CO[4] CO=step_size_SB_CARRY_I0_CO[5] I0=step_size[4] I1=sine_lookup[4]
+.subckt SB_CARRY CI=step_size_SB_CARRY_I0_CO[3] CO=step_size_SB_CARRY_I0_CO[4] I0=step_size[3] I1=sine_lookup[3]
+.subckt SB_CARRY CI=step_size_SB_CARRY_I0_CO[2] CO=step_size_SB_CARRY_I0_CO[3] I0=step_size[2] I1=sine_lookup[2]
+.subckt SB_CARRY CI=step_size_SB_CARRY_I0_CO[1] CO=step_size_SB_CARRY_I0_CO[2] I0=step_size[1] I1=sine_lookup[1]
 .subckt SB_DFF C=clk D=note_value[15] Q=step_size[15]
 .subckt SB_DFF C=clk D=note_value[14] Q=step_size[14]
 .subckt SB_DFF C=clk D=note_value[5] Q=step_size[5]
@@ -261,23 +426,37 @@
 .subckt SB_DFF C=clk D=note_value[8] Q=step_size[8]
 .subckt SB_DFF C=clk D=note_value[7] Q=step_size[7]
 .subckt SB_DFF C=clk D=note_value[6] Q=step_size[6]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[9] I2=step_size[9] I3=step_size_SB_CARRY_I1_CO[9] O=sine_lookup_SB_DFFE_Q_D[9]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[8] I2=step_size[8] I3=step_size_SB_CARRY_I1_CO[8] O=sine_lookup_SB_DFFE_Q_D[8]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[14] I2=step_size[14] I3=step_size_SB_CARRY_I1_CO[14] O=sine_lookup_SB_DFFE_Q_D[14]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[13] I2=step_size[13] I3=step_size_SB_CARRY_I1_CO[13] O=sine_lookup_SB_DFFE_Q_D[13]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[12] I2=step_size[12] I3=step_size_SB_CARRY_I1_CO[12] O=sine_lookup_SB_DFFE_Q_D[12]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[11] I2=step_size[11] I3=step_size_SB_CARRY_I1_CO[11] O=sine_lookup_SB_DFFE_Q_D[11]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[10] I2=step_size[10] I3=step_size_SB_CARRY_I1_CO[10] O=sine_lookup_SB_DFFE_Q_D[10]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[0] I2=step_size[0] I3=$false O=sine_lookup_SB_DFFE_Q_D[0]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[7] I2=step_size[7] I3=step_size_SB_CARRY_I1_CO[7] O=sine_lookup_SB_DFFE_Q_D[7]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[6] I2=step_size[6] I3=step_size_SB_CARRY_I1_CO[6] O=sine_lookup_SB_DFFE_Q_D[6]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[5] I2=step_size[5] I3=step_size_SB_CARRY_I1_CO[5] O=sine_lookup_SB_DFFE_Q_D[5]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[4] I2=step_size[4] I3=step_size_SB_CARRY_I1_CO[4] O=sine_lookup_SB_DFFE_Q_D[4]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[3] I2=step_size[3] I3=step_size_SB_CARRY_I1_CO[3] O=sine_lookup_SB_DFFE_Q_D[3]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[2] I2=step_size[2] I3=step_size_SB_CARRY_I1_CO[2] O=sine_lookup_SB_DFFE_Q_D[2]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[1] I2=step_size[1] I3=step_size_SB_CARRY_I1_CO[1] O=sine_lookup_SB_DFFE_Q_D[1]
-.subckt SB_LUT4 I0=$false I1=sine_lookup[15] I2=step_size[15] I3=step_size_SB_CARRY_I1_CO[15] O=sine_lookup_SB_DFFE_Q_D[15]
-.names $false step_size_SB_CARRY_I1_CO[0]
+.subckt SB_LUT4 I0=$false I1=step_size[9] I2=sine_lookup[9] I3=step_size_SB_CARRY_I0_CO[9] O=sine_lookup_SB_DFFE_Q_D[9]
+.subckt SB_LUT4 I0=$false I1=step_size[8] I2=sine_lookup[8] I3=step_size_SB_CARRY_I0_CO[8] O=sine_lookup_SB_DFFE_Q_D[8]
+.subckt SB_LUT4 I0=$false I1=step_size[14] I2=sine_lookup[14] I3=step_size_SB_CARRY_I0_CO[14] O=sine_lookup_SB_DFFE_Q_D[14]
+.subckt SB_LUT4 I0=$false I1=step_size[13] I2=sine_lookup[13] I3=step_size_SB_CARRY_I0_CO[13] O=sine_lookup_SB_DFFE_Q_D[13]
+.subckt SB_LUT4 I0=$false I1=step_size[12] I2=sine_lookup[12] I3=step_size_SB_CARRY_I0_CO[12] O=sine_lookup_SB_DFFE_Q_D[12]
+.subckt SB_LUT4 I0=$false I1=step_size[11] I2=sine_lookup[11] I3=step_size_SB_CARRY_I0_CO[11] O=sine_lookup_SB_DFFE_Q_D[11]
+.subckt SB_LUT4 I0=$false I1=step_size[10] I2=sine_lookup[10] I3=step_size_SB_CARRY_I0_CO[10] O=sine_lookup_SB_DFFE_Q_D[10]
+.subckt SB_LUT4 I0=$false I1=step_size[0] I2=sine_lookup[0] I3=$false O=sine_lookup_SB_DFFE_Q_D[0]
+.subckt SB_LUT4 I0=$false I1=step_size[7] I2=sine_lookup[7] I3=step_size_SB_CARRY_I0_CO[7] O=sine_lookup_SB_DFFE_Q_D[7]
+.subckt SB_LUT4 I0=$false I1=step_size[6] I2=sine_lookup[6] I3=step_size_SB_CARRY_I0_CO[6] O=sine_lookup_SB_DFFE_Q_D[6]
+.subckt SB_LUT4 I0=$false I1=step_size[5] I2=sine_lookup[5] I3=step_size_SB_CARRY_I0_CO[5] O=sine_lookup_SB_DFFE_Q_D[5]
+.subckt SB_LUT4 I0=$false I1=step_size[4] I2=sine_lookup[4] I3=step_size_SB_CARRY_I0_CO[4] O=sine_lookup_SB_DFFE_Q_D[4]
+.subckt SB_LUT4 I0=$false I1=step_size[3] I2=sine_lookup[3] I3=step_size_SB_CARRY_I0_CO[3] O=sine_lookup_SB_DFFE_Q_D[3]
+.subckt SB_LUT4 I0=$false I1=step_size[2] I2=sine_lookup[2] I3=step_size_SB_CARRY_I0_CO[2] O=sine_lookup_SB_DFFE_Q_D[2]
+.subckt SB_LUT4 I0=$false I1=step_size[1] I2=sine_lookup[1] I3=step_size_SB_CARRY_I0_CO[1] O=sine_lookup_SB_DFFE_Q_D[1]
+.subckt SB_LUT4 I0=$false I1=step_size[15] I2=sine_lookup[15] I3=step_size_SB_CARRY_I0_CO[15] O=sine_lookup_SB_DFFE_Q_D[15]
+.names $false step_size_SB_CARRY_I0_CO[0]
+1 1
+.names $false note_lookup[0]
+1 1
+.names $false note_lookup[1]
+1 1
+.names $false note_lookup[2]
+1 1
+.names $false note_lookup[3]
+1 1
+.names $false note_lookup[4]
+1 1
+.names $false note_lookup[5]
+1 1
+.names $false note_lookup[6]
 1 1
 .end
 
@@ -387,13 +566,21 @@
 1 1
 .names sine_value_SB_LUT4_O_10_I3 sine_value_SB_LUT4_O_I2_SB_CARRY_I1_CO[1]
 1 1
-.names sine_data[0] rom.0.0.0_RDATA[1]
+.names sine_data[8] rom.2.0.0_RDATA[1]
 1 1
-.names sine_data[1] rom.0.0.0_RDATA[5]
+.names sine_data[9] rom.2.0.0_RDATA[5]
 1 1
-.names sine_data[2] rom.0.0.0_RDATA[9]
+.names sine_data[10] rom.2.0.0_RDATA[9]
 1 1
-.names sine_data[3] rom.0.0.0_RDATA[13]
+.names sine_data[11] rom.2.0.0_RDATA[13]
+1 1
+.names sine_data[4] rom.1.0.0_RDATA[1]
+1 1
+.names sine_data[5] rom.1.0.0_RDATA[5]
+1 1
+.names sine_data[6] rom.1.0.0_RDATA[9]
+1 1
+.names sine_data[7] rom.1.0.0_RDATA[13]
 1 1
 .names sine_data[20] rom.5.0.0_RDATA[1]
 1 1
@@ -411,6 +598,14 @@
 1 1
 .names sine_data[19] rom.4.0.0_RDATA[13]
 1 1
+.names sine_data[0] rom.0.0.0_RDATA[1]
+1 1
+.names sine_data[1] rom.0.0.0_RDATA[5]
+1 1
+.names sine_data[2] rom.0.0.0_RDATA[9]
+1 1
+.names sine_data[3] rom.0.0.0_RDATA[13]
+1 1
 .names sine_data[12] rom.3.0.0_RDATA[1]
 1 1
 .names sine_data[13] rom.3.0.0_RDATA[5]
@@ -418,22 +613,6 @@
 .names sine_data[14] rom.3.0.0_RDATA[9]
 1 1
 .names sine_data[15] rom.3.0.0_RDATA[13]
-1 1
-.names sine_data[8] rom.2.0.0_RDATA[1]
-1 1
-.names sine_data[9] rom.2.0.0_RDATA[5]
-1 1
-.names sine_data[10] rom.2.0.0_RDATA[9]
-1 1
-.names sine_data[11] rom.2.0.0_RDATA[13]
-1 1
-.names sine_data[4] rom.1.0.0_RDATA[1]
-1 1
-.names sine_data[5] rom.1.0.0_RDATA[5]
-1 1
-.names sine_data[6] rom.1.0.0_RDATA[9]
-1 1
-.names sine_data[7] rom.1.0.0_RDATA[13]
 1 1
 .names sine_lookup[4] sine_addr[0]
 1 1
@@ -478,21 +657,14 @@
 .names $true
 1
 .names $undef
-.subckt SB_LUT4 I0=receive I1=state[0] I2=state[1] I3=state_SB_DFFE_Q_E O=receive_SB_LUT4_I0_O
-.subckt SB_LUT4 I0=receive_SB_LUT4_I0_O_SB_LUT4_I3_I0 I1=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I2=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2 I3=receive_SB_LUT4_I0_O O=receive_SB_LUT4_I0_O_SB_LUT4_I3_O
-.subckt SB_LUT4 I0=receive_SB_LUT4_I0_O_SB_LUT4_I3_I0 I1=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I2=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2 I3=receive_SB_LUT4_I0_O O=state_SB_DFFE_Q_4_D[1]
-.subckt SB_LUT4 I0=$false I1=$false I2=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I3=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2 O=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2_SB_LUT4_I3_O
-.subckt SB_LUT4 I0=$false I1=$false I2=shift_counter_SB_DFFE_Q_E I3=state[1] O=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2
-.subckt SB_LUT4 I0=$false I1=state[1] I2=state[0] I3=state_SB_DFFE_Q_E O=receive_SB_LUT4_I0_O_SB_LUT4_I3_I0
-.subckt SB_LUT4 I0=shift_counter_SB_DFFE_Q_E I1=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2 I2=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2_SB_LUT4_I3_O I3=shift_counter[0] O=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O[0]
-.subckt SB_LUT4 I0=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O_SB_LUT4_O_I0 I1=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I2_O I2=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O_SB_LUT4_O_I2 I3=rx_reg_SB_LUT4_O_I3_SB_LUT4_I1_O_SB_LUT4_I2_O O=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O[1]
-.subckt SB_LUT4 I0=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O_SB_LUT4_O_1_I0 I1=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I2_O I2=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O_SB_LUT4_O_1_I2 I3=rx_reg_SB_LUT4_O_I3_SB_LUT4_I1_O_SB_LUT4_I2_1_O O=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O[2]
-.subckt SB_LUT4 I0=$false I1=shift_counter[2] I2=$true I3=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O_SB_LUT4_O_1_I0_SB_LUT4_O_I3[2] O=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O_SB_LUT4_O_1_I0
-.subckt SB_CARRY CI=shift_counter[0] CO=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O_SB_LUT4_O_1_I0_SB_LUT4_O_I3[2] I0=shift_counter[1] I1=$true
-.subckt SB_LUT4 I0=$false I1=shift_counter[2] I2=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I3=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2 O=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O_SB_LUT4_O_1_I2
-.subckt SB_LUT4 I0=$false I1=shift_counter[1] I2=$true I3=shift_counter[0] O=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O_SB_LUT4_O_I0
-.subckt SB_LUT4 I0=$false I1=shift_counter[1] I2=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I3=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2 O=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O_SB_LUT4_O_I2
-.subckt SB_LUT4 I0=$false I1=state[1] I2=rx_reg_SB_LUT4_O_I3_SB_LUT4_I1_O I3=shift_counter_SB_DFFE_Q_E O=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2
+.subckt SB_LUT4 I0=receive I1=state[1] I2=state[0] I3=state_SB_DFFE_Q_E O=receive_SB_LUT4_I0_O
+.subckt SB_LUT4 I0=receive_SB_LUT4_I0_O_SB_LUT4_I2_I0 I1=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I2=receive_SB_LUT4_I0_O I3=receive_SB_LUT4_I0_O_SB_LUT4_I2_I3 O=receive_SB_LUT4_I0_O_SB_LUT4_I2_O
+.subckt SB_LUT4 I0=receive_SB_LUT4_I0_O_SB_LUT4_I2_I0 I1=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I2=receive_SB_LUT4_I0_O I3=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3 O=state_SB_DFFE_Q_4_D[1]
+.subckt SB_LUT4 I0=$false I1=$false I2=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I3=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3 O=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3_SB_LUT4_I3_O
+.subckt SB_LUT4 I0=$false I1=$false I2=shift_counter_SB_DFFE_Q_E I3=state[1] O=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3
+.subckt SB_LUT4 I0=$false I1=state[1] I2=state_SB_DFFE_Q_E I3=state[0] O=receive_SB_LUT4_I0_O_SB_LUT4_I2_I0
+.subckt SB_LUT4 I0=shift_counter_SB_DFFE_Q_E I1=receive_SB_LUT4_I0_O_SB_LUT4_I2_I3 I2=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3_SB_LUT4_I3_O I3=shift_counter[0] O=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_O[0]
+.subckt SB_LUT4 I0=$false I1=state[1] I2=rx_reg_SB_LUT4_O_I3_SB_LUT4_I1_O I3=shift_counter_SB_DFFE_Q_E O=receive_SB_LUT4_I0_O_SB_LUT4_I2_I3
 .subckt SB_LUT4 I0=$false I1=$false I2=$false I3=rx_bits O=rx_bits_SB_LUT4_I3_O
 .subckt SB_DFF C=clk D=rx_bits_SB_LUT4_I3_O Q=rx_bits_SB_LUT4_I3_O_SB_DFF_D_Q
 .subckt SB_DFF C=clk D=rx_bits_SB_LUT4_I3_O_SB_DFF_D_Q Q=rx_bits_SB_LUT4_I3_O_SB_DFF_D_Q_SB_DFF_D_Q
@@ -500,8 +672,10 @@
 .subckt SB_DFF C=clk D=rx_reg_SB_LUT4_O_I3_SB_DFF_Q_D Q=rx_reg_SB_LUT4_O_I3
 .subckt SB_DFF C=clk D=rx_bits_SB_LUT4_I3_O_SB_DFF_D_Q_SB_DFF_D_Q Q=rx_reg_SB_LUT4_O_I3_SB_DFF_Q_D
 .subckt SB_LUT4 I0=$false I1=rx_reg_SB_LUT4_O_I3 I2=rx_reg_SB_LUT4_O_I3_SB_DFF_Q_D I3=rx_bits_SB_LUT4_I3_O_SB_DFF_D_Q_SB_DFF_D_Q O=rx_reg_SB_LUT4_O_I3_SB_LUT4_I1_O
-.subckt SB_LUT4 I0=$false I1=shift_counter[1] I2=rx_reg_SB_LUT4_O_I3_SB_LUT4_I1_O I3=shift_counter_SB_DFFE_Q_E_SB_LUT4_I3_O O=rx_reg_SB_LUT4_O_I3_SB_LUT4_I1_O_SB_LUT4_I2_O
-.subckt SB_LUT4 I0=$false I1=shift_counter[2] I2=rx_reg_SB_LUT4_O_I3_SB_LUT4_I1_O I3=shift_counter_SB_DFFE_Q_E_SB_LUT4_I3_O O=rx_reg_SB_LUT4_O_I3_SB_LUT4_I1_O_SB_LUT4_I2_1_O
+.subckt SB_LUT4 I0=$false I1=state[1] I2=rx_reg_SB_LUT4_O_I3_SB_LUT4_I1_O I3=shift_counter[1] O=rx_reg_SB_LUT4_O_I3_SB_LUT4_I1_O_SB_LUT4_I2_O
+.subckt SB_LUT4 I0=$false I1=state[1] I2=rx_reg_SB_LUT4_O_I3_SB_LUT4_I1_O I3=shift_counter[2] O=rx_reg_SB_LUT4_O_I3_SB_LUT4_I1_O_SB_LUT4_I2_1_O
+.subckt SB_LUT4 I0=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I1=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3 I2=shift_counter_SB_DFFE_Q_E_SB_LUT4_I3_O I3=rx_reg_SB_LUT4_O_I3_SB_LUT4_I1_O_SB_LUT4_I2_1_O O=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_1_I3
+.subckt SB_LUT4 I0=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I1=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3 I2=shift_counter_SB_DFFE_Q_E_SB_LUT4_I3_O I3=rx_reg_SB_LUT4_O_I3_SB_LUT4_I1_O_SB_LUT4_I2_O O=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_I3
 .subckt SB_CARRY CI=serial_counter[0] CO=serial_counter_SB_DFFSS_Q_D_SB_LUT4_O_I3[2] I0=serial_counter[1] I1=$true
 .subckt SB_CARRY CI=serial_counter_SB_DFFSS_Q_D_SB_LUT4_O_I3[9] CO=serial_counter_SB_DFFSS_Q_D_SB_LUT4_O_I3[10] I0=serial_counter[9] I1=$true
 .subckt SB_CARRY CI=serial_counter_SB_DFFSS_Q_D_SB_LUT4_O_I3[8] CO=serial_counter_SB_DFFSS_Q_D_SB_LUT4_O_I3[9] I0=serial_counter[8] I1=$true
@@ -549,29 +723,33 @@
 .subckt SB_LUT4 I0=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I1=serial_counter_SB_LUT4_O_8_I3_SB_LUT4_I1_I0 I2=shift_counter_SB_DFFE_Q_E_SB_LUT4_I3_O I3=serial_counter_SB_DFFSS_Q_D_SB_LUT4_O_I3[11] O=serial_counter_SB_LUT4_O_8_I3_SB_LUT4_I1_I0_SB_DFF_Q_D
 .subckt SB_DFF C=clk D=serial_counter_SB_LUT4_O_I3_SB_DFF_Q_D Q=serial_counter_SB_LUT4_O_I3
 .subckt SB_LUT4 I0=$false I1=$false I2=shift_counter_SB_DFFE_Q_E_SB_LUT4_I3_O I3=serial_counter_SB_LUT4_O_I3 O=serial_counter_SB_LUT4_O_I3_SB_DFF_Q_D
-.subckt SB_DFFE C=clk D=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O[2] E=shift_counter_SB_DFFE_Q_E Q=shift_counter[2]
-.subckt SB_DFFE C=clk D=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O[1] E=shift_counter_SB_DFFE_Q_E Q=shift_counter[1]
-.subckt SB_DFFE C=clk D=receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O[0] E=shift_counter_SB_DFFE_Q_E Q=shift_counter[0]
+.subckt SB_DFFE C=clk D=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_O[2] E=shift_counter_SB_DFFE_Q_E Q=shift_counter[2]
+.subckt SB_DFFE C=clk D=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_O[1] E=shift_counter_SB_DFFE_Q_E Q=shift_counter[1]
+.subckt SB_DFFE C=clk D=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_O[0] E=shift_counter_SB_DFFE_Q_E Q=shift_counter[0]
 .subckt SB_LUT4 I0=$false I1=$false I2=state[1] I3=shift_counter_SB_DFFE_Q_E O=shift_counter_SB_DFFE_Q_E_SB_LUT4_I3_O
 .subckt SB_LUT4 I0=state[0] I1=state[4] I2=state[2] I3=state[3] O=shift_counter_SB_DFFE_Q_E
-.subckt SB_DFFE C=clk D=rx_reg[0] E=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2_SB_LUT4_I3_O Q=shift_register[7]
-.subckt SB_DFFE C=clk D=shift_register[7] E=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2_SB_LUT4_I3_O Q=shift_register[6]
-.subckt SB_DFFE C=clk D=shift_register[6] E=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2_SB_LUT4_I3_O Q=shift_register[5]
-.subckt SB_DFFE C=clk D=shift_register[5] E=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2_SB_LUT4_I3_O Q=shift_register[4]
-.subckt SB_DFFE C=clk D=shift_register[4] E=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2_SB_LUT4_I3_O Q=shift_register[3]
-.subckt SB_DFFE C=clk D=shift_register[3] E=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2_SB_LUT4_I3_O Q=shift_register[2]
-.subckt SB_DFFE C=clk D=shift_register[2] E=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2_SB_LUT4_I3_O Q=shift_register[1]
-.subckt SB_DFFE C=clk D=shift_register[1] E=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2_SB_LUT4_I3_O Q=shift_register[0]
+.subckt SB_DFFE C=clk D=rx_reg[0] E=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3_SB_LUT4_I3_O Q=shift_register[7]
+.subckt SB_DFFE C=clk D=shift_register[7] E=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3_SB_LUT4_I3_O Q=shift_register[6]
+.subckt SB_DFFE C=clk D=shift_register[6] E=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3_SB_LUT4_I3_O Q=shift_register[5]
+.subckt SB_DFFE C=clk D=shift_register[5] E=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3_SB_LUT4_I3_O Q=shift_register[4]
+.subckt SB_DFFE C=clk D=shift_register[4] E=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3_SB_LUT4_I3_O Q=shift_register[3]
+.subckt SB_DFFE C=clk D=shift_register[3] E=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3_SB_LUT4_I3_O Q=shift_register[2]
+.subckt SB_DFFE C=clk D=shift_register[2] E=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3_SB_LUT4_I3_O Q=shift_register[1]
+.subckt SB_DFFE C=clk D=shift_register[1] E=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3_SB_LUT4_I3_O Q=shift_register[0]
 .subckt SB_DFFE C=clk D=$false E=state_SB_DFFE_Q_E Q=state[4]
 .subckt SB_DFFE C=clk D=$false E=state_SB_DFFE_Q_E Q=state[3]
 .subckt SB_DFFE C=clk D=$false E=state_SB_DFFE_Q_E Q=state[2]
 .subckt SB_DFFE C=clk D=state_SB_DFFE_Q_4_D[1] E=state_SB_DFFE_Q_E Q=state[1]
 .subckt SB_DFFE C=clk D=state_SB_DFFE_Q_4_D[0] E=state_SB_DFFE_Q_E Q=state[0]
-.subckt SB_LUT4 I0=$false I1=receive_SB_LUT4_I0_O_SB_LUT4_I3_1_I2_SB_LUT4_I3_O I2=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2 I3=receive_SB_LUT4_I0_O_SB_LUT4_I3_O O=state_SB_DFFE_Q_4_D[0]
-.subckt SB_LUT4 I0=$false I1=$false I2=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2 I3=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O O=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I2_O
+.subckt SB_LUT4 I0=$false I1=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3_SB_LUT4_I3_O I2=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2 I3=receive_SB_LUT4_I0_O_SB_LUT4_I2_O O=state_SB_DFFE_Q_4_D[0]
+.subckt SB_LUT4 I0=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2 I1=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_I1 I2=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3_SB_LUT4_I3_O I3=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_I3 O=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_O[1]
+.subckt SB_LUT4 I0=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2 I1=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_1_I1 I2=receive_SB_LUT4_I0_O_SB_LUT4_I2_1_I3_SB_LUT4_I3_O I3=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_1_I3 O=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_O[2]
+.subckt SB_LUT4 I0=$false I1=shift_counter[2] I2=$true I3=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_1_I1_SB_LUT4_O_I3[2] O=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_1_I1
+.subckt SB_CARRY CI=shift_counter[0] CO=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_1_I1_SB_LUT4_O_I3[2] I0=shift_counter[1] I1=$true
+.subckt SB_LUT4 I0=$false I1=shift_counter[1] I2=$true I3=shift_counter[0] O=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_I1
 .subckt SB_LUT4 I0=$false I1=shift_counter[0] I2=shift_counter[1] I3=shift_counter[2] O=state_SB_DFFE_Q_4_D_SB_LUT4_O_I2
 .subckt SB_LUT4 I0=$false I1=state[4] I2=state[2] I3=state[3] O=state_SB_DFFE_Q_E
-.subckt SB_LUT4 I0=$false I1=state_SB_DFFE_Q_E I2=state[0] I3=state[1] O=valid
+.subckt SB_LUT4 I0=$false I1=state_SB_DFFE_Q_E I2=state[1] I3=state[0] O=valid
 .names $false state_SB_DFFE_Q_4_D[2]
 1 1
 .names $false state_SB_DFFE_Q_4_D[3]
@@ -582,9 +760,9 @@
 1 1
 .names serial_counter[0] serial_counter_SB_DFFSS_Q_D_SB_LUT4_O_I3[1]
 1 1
-.names $true receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O_SB_LUT4_O_1_I0_SB_LUT4_O_I3[0]
+.names $true state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_1_I1_SB_LUT4_O_I3[0]
 1 1
-.names shift_counter[0] receive_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_I1_O_SB_LUT4_O_1_I0_SB_LUT4_O_I3[1]
+.names shift_counter[0] state_SB_DFFE_Q_4_D_SB_LUT4_O_I2_SB_LUT4_I0_1_I1_SB_LUT4_O_I3[1]
 1 1
 .names shift_register[0] rx_byte[0]
 1 1
@@ -613,13 +791,11 @@
 .names $true
 1
 .names $undef
-.subckt SB_LUT4 I0=$false I1=$false I2=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_I1_O I3=ready O=ready_SB_LUT4_I3_O
-.subckt SB_LUT4 I0=$false I1=shift_register[1] I2=send I3=ready O=ready_SB_LUT4_I3_1_O
-.subckt SB_LUT4 I0=$false I1=shift_register[2] I2=send I3=ready O=ready_SB_LUT4_I3_2_O
-.subckt SB_LUT4 I0=$false I1=shift_register[3] I2=send I3=ready O=ready_SB_LUT4_I3_3_O
-.subckt SB_LUT4 I0=$false I1=shift_register[4] I2=send I3=ready O=ready_SB_LUT4_I3_4_O
-.subckt SB_LUT4 I0=$false I1=shift_register[6] I2=send I3=ready O=ready_SB_LUT4_I3_5_O
+.subckt SB_LUT4 I0=$false I1=$false I2=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I3=ready O=ready_SB_LUT4_I3_O
 .subckt SB_LUT4 I0=$false I1=$false I2=state[1] I3=state[0] O=ready
+.subckt SB_LUT4 I0=send I1=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I2=shift_counter[0] I3=state[1] O=send_SB_LUT4_I0_O
+.subckt SB_LUT4 I0=$false I1=state[1] I2=send I3=shift_counter[1] O=send_SB_LUT4_I2_O
+.subckt SB_LUT4 I0=$false I1=state[1] I2=send I3=shift_counter[2] O=send_SB_LUT4_I2_1_O
 .subckt SB_CARRY CI=serial_counter[0] CO=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[2] I0=serial_counter[1] I1=$true
 .subckt SB_CARRY CI=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[9] CO=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[10] I0=serial_counter[9] I1=$true
 .subckt SB_CARRY CI=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[8] CO=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[9] I0=serial_counter[8] I1=$true
@@ -634,101 +810,326 @@
 .subckt SB_DFFSR C=clk D=serial_counter_SB_DFFSR_Q_D[9] Q=serial_counter[9] R=ready_SB_LUT4_I3_O
 .subckt SB_LUT4 I0=$false I1=serial_counter[10] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[10] O=serial_counter_SB_DFFSR_Q_D[10]
 .subckt SB_LUT4 I0=$false I1=serial_counter[9] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[9] O=serial_counter_SB_DFFSR_Q_D[9]
-.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_I3 O=serial_counter[8]
-.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_1_I3 O=serial_counter[7]
+.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_I3 O=serial_counter[0]
+.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_1_I3 O=serial_counter[8]
 .subckt SB_DFF C=clk D=serial_counter_SB_LUT4_O_1_I3_SB_DFF_Q_D Q=serial_counter_SB_LUT4_O_1_I3
-.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[7] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[7] O=serial_counter_SB_LUT4_O_1_I3_SB_DFF_Q_D
-.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_2_I3 O=serial_counter[6]
+.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[8] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[8] O=serial_counter_SB_LUT4_O_1_I3_SB_DFF_Q_D
+.subckt SB_LUT4 I0=serial_counter[9] I1=serial_counter[10] I2=serial_counter_SB_LUT4_O_1_I3 I3=serial_counter_SB_LUT4_O_I3 O=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O
+.subckt SB_LUT4 I0=$false I1=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O I2=serial_counter_SB_LUT4_O_5_I3_SB_LUT4_I0_O I3=serial_counter_SB_LUT4_O_8_I3_SB_LUT4_I1_O O=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O
+.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_2_I3 O=serial_counter[7]
 .subckt SB_DFF C=clk D=serial_counter_SB_LUT4_O_2_I3_SB_DFF_Q_D Q=serial_counter_SB_LUT4_O_2_I3
-.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[6] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[6] O=serial_counter_SB_LUT4_O_2_I3_SB_DFF_Q_D
-.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_3_I3 O=serial_counter[5]
+.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[7] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[7] O=serial_counter_SB_LUT4_O_2_I3_SB_DFF_Q_D
+.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_3_I3 O=serial_counter[6]
 .subckt SB_DFF C=clk D=serial_counter_SB_LUT4_O_3_I3_SB_DFF_Q_D Q=serial_counter_SB_LUT4_O_3_I3
-.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[5] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[5] O=serial_counter_SB_LUT4_O_3_I3_SB_DFF_Q_D
-.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_4_I3 O=serial_counter[4]
+.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[6] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[6] O=serial_counter_SB_LUT4_O_3_I3_SB_DFF_Q_D
+.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_4_I3 O=serial_counter[5]
 .subckt SB_DFF C=clk D=serial_counter_SB_LUT4_O_4_I3_SB_DFF_Q_D Q=serial_counter_SB_LUT4_O_4_I3
-.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[4] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[4] O=serial_counter_SB_LUT4_O_4_I3_SB_DFF_Q_D
-.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_5_I3 O=serial_counter[3]
+.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[5] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[5] O=serial_counter_SB_LUT4_O_4_I3_SB_DFF_Q_D
+.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_5_I3 O=serial_counter[4]
 .subckt SB_DFF C=clk D=serial_counter_SB_LUT4_O_5_I3_SB_DFF_Q_D Q=serial_counter_SB_LUT4_O_5_I3
-.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[3] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[3] O=serial_counter_SB_LUT4_O_5_I3_SB_DFF_Q_D
+.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[4] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[4] O=serial_counter_SB_LUT4_O_5_I3_SB_DFF_Q_D
 .subckt SB_LUT4 I0=serial_counter_SB_LUT4_O_5_I3 I1=serial_counter_SB_LUT4_O_4_I3 I2=serial_counter_SB_LUT4_O_3_I3 I3=serial_counter_SB_LUT4_O_2_I3 O=serial_counter_SB_LUT4_O_5_I3_SB_LUT4_I0_O
-.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_6_I3 O=serial_counter[2]
+.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_6_I3 O=serial_counter[3]
 .subckt SB_DFF C=clk D=serial_counter_SB_LUT4_O_6_I3_SB_DFF_Q_D Q=serial_counter_SB_LUT4_O_6_I3
-.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[2] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[2] O=serial_counter_SB_LUT4_O_6_I3_SB_DFF_Q_D
-.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_7_I3 O=serial_counter[1]
+.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[3] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[3] O=serial_counter_SB_LUT4_O_6_I3_SB_DFF_Q_D
+.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_7_I3 O=serial_counter[2]
 .subckt SB_DFF C=clk D=serial_counter_SB_LUT4_O_7_I3_SB_DFF_Q_D Q=serial_counter_SB_LUT4_O_7_I3
-.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[1] I2=$true I3=serial_counter[0] O=serial_counter_SB_LUT4_O_7_I3_SB_DFF_Q_D
-.subckt SB_LUT4 I0=serial_counter_SB_LUT4_O_7_I3_SB_LUT4_I2_I0 I1=serial_counter_SB_LUT4_O_8_I3 I2=serial_counter_SB_LUT4_O_7_I3 I3=serial_counter_SB_LUT4_O_6_I3 O=serial_counter_SB_LUT4_O_7_I3_SB_LUT4_I2_O
-.subckt SB_DFF C=clk D=serial_counter_SB_LUT4_O_7_I3_SB_LUT4_I2_I0_SB_DFF_Q_D Q=serial_counter_SB_LUT4_O_7_I3_SB_LUT4_I2_I0
-.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter_SB_LUT4_O_7_I3_SB_LUT4_I2_I0 I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[11] O=serial_counter_SB_LUT4_O_7_I3_SB_LUT4_I2_I0_SB_DFF_Q_D
-.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_8_I3 O=serial_counter[0]
+.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[2] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[2] O=serial_counter_SB_LUT4_O_7_I3_SB_DFF_Q_D
+.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=serial_counter_SB_LUT4_O_8_I3 O=serial_counter[1]
 .subckt SB_DFF C=clk D=serial_counter_SB_LUT4_O_8_I3_SB_DFF_Q_D Q=serial_counter_SB_LUT4_O_8_I3
-.subckt SB_LUT4 I0=$false I1=$false I2=ready_SB_LUT4_I3_O I3=serial_counter_SB_LUT4_O_8_I3 O=serial_counter_SB_LUT4_O_8_I3_SB_DFF_Q_D
+.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[1] I2=$true I3=serial_counter[0] O=serial_counter_SB_LUT4_O_8_I3_SB_DFF_Q_D
+.subckt SB_LUT4 I0=serial_counter_SB_LUT4_O_8_I3_SB_LUT4_I1_I0 I1=serial_counter_SB_LUT4_O_8_I3 I2=serial_counter_SB_LUT4_O_7_I3 I3=serial_counter_SB_LUT4_O_6_I3 O=serial_counter_SB_LUT4_O_8_I3_SB_LUT4_I1_O
+.subckt SB_DFF C=clk D=serial_counter_SB_LUT4_O_8_I3_SB_LUT4_I1_I0_SB_DFF_Q_D Q=serial_counter_SB_LUT4_O_8_I3_SB_LUT4_I1_I0
+.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter_SB_LUT4_O_8_I3_SB_LUT4_I1_I0 I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[11] O=serial_counter_SB_LUT4_O_8_I3_SB_LUT4_I1_I0_SB_DFF_Q_D
 .subckt SB_DFF C=clk D=serial_counter_SB_LUT4_O_I3_SB_DFF_Q_D Q=serial_counter_SB_LUT4_O_I3
-.subckt SB_LUT4 I0=ready_SB_LUT4_I3_O I1=serial_counter[8] I2=$true I3=serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[8] O=serial_counter_SB_LUT4_O_I3_SB_DFF_Q_D
-.subckt SB_LUT4 I0=serial_counter[9] I1=serial_counter[10] I2=serial_counter_SB_LUT4_O_1_I3 I3=serial_counter_SB_LUT4_O_I3 O=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O
-.subckt SB_LUT4 I0=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O I1=serial_counter_SB_LUT4_O_5_I3_SB_LUT4_I0_O I2=serial_counter_SB_LUT4_O_7_I3_SB_LUT4_I2_O I3=shift_counter[0] O=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_2_I3_SB_LUT4_O_I3
-.subckt SB_LUT4 I0=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O I1=serial_counter_SB_LUT4_O_5_I3_SB_LUT4_I0_O I2=serial_counter_SB_LUT4_O_7_I3_SB_LUT4_I2_O I3=state_SB_DFFE_Q_D_SB_LUT4_O_1_I0 O=state_SB_DFFE_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I1
-.subckt SB_LUT4 I0=$false I1=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O I2=serial_counter_SB_LUT4_O_5_I3_SB_LUT4_I0_O I3=serial_counter_SB_LUT4_O_7_I3_SB_LUT4_I2_O O=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_I1_O
+.subckt SB_LUT4 I0=$false I1=$false I2=ready_SB_LUT4_I3_O I3=serial_counter_SB_LUT4_O_I3 O=serial_counter_SB_LUT4_O_I3_SB_DFF_Q_D
 .subckt SB_DFFE C=clk D=shift_counter_SB_DFFE_Q_D[2] E=shift_counter_SB_DFFE_Q_E Q=shift_counter[2]
 .subckt SB_DFFE C=clk D=shift_counter_SB_DFFE_Q_D[1] E=shift_counter_SB_DFFE_Q_E Q=shift_counter[1]
 .subckt SB_DFFE C=clk D=shift_counter_SB_DFFE_Q_D[0] E=shift_counter_SB_DFFE_Q_E Q=shift_counter[0]
-.subckt SB_LUT4 I0=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_I0 I1=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_I1_O I2=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_I2 I3=state[1] O=shift_counter_SB_DFFE_Q_D[1]
-.subckt SB_LUT4 I0=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_1_I0 I1=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_I1_O I2=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_1_I2 I3=state[1] O=shift_counter_SB_DFFE_Q_D[2]
+.subckt SB_LUT4 I0=state_SB_DFFE_Q_D_SB_LUT4_O_1_I0 I1=state[1] I2=state[0] I3=send_SB_LUT4_I0_O O=shift_counter_SB_DFFE_Q_D[0]
+.subckt SB_LUT4 I0=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_1_I0 I1=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I2=send_SB_LUT4_I2_O I3=state[1] O=shift_counter_SB_DFFE_Q_D[1]
 .subckt SB_LUT4 I0=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_1_I0_SB_LUT4_O_I0 I1=state[0] I2=state_SB_DFFE_Q_D_SB_LUT4_O_1_I0 I3=state[1] O=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_1_I0
-.subckt SB_LUT4 I0=$false I1=shift_counter[2] I2=$true I3=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_1_I0_SB_LUT4_O_I0_SB_LUT4_O_I3[2] O=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_1_I0_SB_LUT4_O_I0
-.subckt SB_CARRY CI=shift_counter[0] CO=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_1_I0_SB_LUT4_O_I0_SB_LUT4_O_I3[2] I0=shift_counter[1] I1=$true
-.subckt SB_LUT4 I0=$false I1=state[1] I2=send I3=shift_counter[2] O=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_1_I2
-.subckt SB_LUT4 I0=shift_counter[0] I1=send I2=ready I3=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_2_I3 O=shift_counter_SB_DFFE_Q_D[0]
-.subckt SB_LUT4 I0=state[0] I1=state_SB_DFFE_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I1 I2=state[1] I3=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_2_I3_SB_LUT4_O_I3 O=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_2_I3
-.subckt SB_LUT4 I0=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I0 I1=state[0] I2=state_SB_DFFE_Q_D_SB_LUT4_O_1_I0 I3=state[1] O=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_I0
-.subckt SB_LUT4 I0=$false I1=shift_counter[1] I2=$true I3=shift_counter[0] O=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I0
-.subckt SB_LUT4 I0=$false I1=state[1] I2=send I3=shift_counter[1] O=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_I2
+.subckt SB_LUT4 I0=$false I1=shift_counter[1] I2=$true I3=shift_counter[0] O=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_1_I0_SB_LUT4_O_I0
+.subckt SB_LUT4 I0=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_2_I0 I1=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I2=send_SB_LUT4_I2_1_O I3=state[1] O=shift_counter_SB_DFFE_Q_D[2]
+.subckt SB_LUT4 I0=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_2_I0_SB_LUT4_O_I0 I1=state[0] I2=state_SB_DFFE_Q_D_SB_LUT4_O_1_I0 I3=state[1] O=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_2_I0
+.subckt SB_LUT4 I0=$false I1=shift_counter[2] I2=$true I3=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_2_I0_SB_LUT4_O_I0_SB_LUT4_O_I3[2] O=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_2_I0_SB_LUT4_O_I0
+.subckt SB_CARRY CI=shift_counter[0] CO=shift_counter_SB_DFFE_Q_D_SB_LUT4_O_2_I0_SB_LUT4_O_I0_SB_LUT4_O_I3[2] I0=shift_counter[1] I1=$true
 .subckt SB_LUT4 I0=$false I1=$false I2=state[1] I3=state[0] O=shift_counter_SB_DFFE_Q_E
-.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I0_O[7] E=shift_register_SB_DFFE_Q_E Q=shift_register[7]
-.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I0_O[6] E=shift_register_SB_DFFE_Q_E Q=shift_register[6]
-.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I0_O[5] E=shift_register_SB_DFFE_Q_E Q=shift_register[5]
-.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I0_O[4] E=shift_register_SB_DFFE_Q_E Q=shift_register[4]
-.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I0_O[3] E=shift_register_SB_DFFE_Q_E Q=shift_register[3]
-.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I0_O[2] E=shift_register_SB_DFFE_Q_E Q=shift_register[2]
-.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I0_O[1] E=shift_register_SB_DFFE_Q_E Q=shift_register[1]
-.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I0_O[0] E=shift_register_SB_DFFE_Q_E Q=shift_register[0]
+.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[7] E=shift_register_SB_DFFE_Q_E Q=shift_register[7]
+.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[6] E=shift_register_SB_DFFE_Q_E Q=shift_register[6]
+.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[5] E=shift_register_SB_DFFE_Q_E Q=shift_register[5]
+.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[4] E=shift_register_SB_DFFE_Q_E Q=shift_register[4]
+.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[3] E=shift_register_SB_DFFE_Q_E Q=shift_register[3]
+.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[2] E=shift_register_SB_DFFE_Q_E Q=shift_register[2]
+.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[1] E=shift_register_SB_DFFE_Q_E Q=shift_register[1]
+.subckt SB_DFFE C=clk D=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[0] E=shift_register_SB_DFFE_Q_E Q=shift_register[0]
 .subckt SB_LUT4 I0=$false I1=$false I2=$false I3=state[0] O=shift_register_SB_DFFE_Q_E
 .subckt SB_DFFE C=clk D=state_SB_DFFE_Q_D[1] E=$true Q=state[1]
 .subckt SB_DFFE C=clk D=state_SB_DFFE_Q_D[0] E=$true Q=state[0]
-.subckt SB_LUT4 I0=send I1=ready I2=state_SB_DFFE_Q_D_SB_LUT4_O_I2 I3=state_SB_DFFE_Q_D_SB_LUT4_O_I3 O=state_SB_DFFE_Q_D[0]
-.subckt SB_LUT4 I0=state_SB_DFFE_Q_D_SB_LUT4_O_1_I0 I1=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_I1_O I2=state[0] I3=state[1] O=state_SB_DFFE_Q_D[1]
+.subckt SB_LUT4 I0=state[1] I1=state[0] I2=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I3=state_SB_DFFE_Q_D_SB_LUT4_O_I3 O=state_SB_DFFE_Q_D[0]
+.subckt SB_LUT4 I0=state_SB_DFFE_Q_D_SB_LUT4_O_1_I0 I1=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I2=state[0] I3=state[1] O=state_SB_DFFE_Q_D[1]
 .subckt SB_LUT4 I0=$false I1=shift_counter[0] I2=shift_counter[1] I3=shift_counter[2] O=state_SB_DFFE_Q_D_SB_LUT4_O_1_I0
-.subckt SB_LUT4 I0=$false I1=state_SB_DFFE_Q_D_SB_LUT4_O_I2_SB_LUT4_O_I1 I2=state[1] I3=state[0] O=state_SB_DFFE_Q_D_SB_LUT4_O_I2
-.subckt SB_LUT4 I0=state_SB_DFFE_Q_D_SB_LUT4_O_1_I0 I1=state[0] I2=state[1] I3=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_I1_O O=state_SB_DFFE_Q_D_SB_LUT4_O_I3
+.subckt SB_LUT4 I0=$false I1=send I2=state_SB_DFFE_Q_D_SB_LUT4_O_1_I0 I3=state[1] O=state_SB_DFFE_Q_D_SB_LUT4_O_I3
 .subckt SB_LUT4 I0=$false I1=shift_register[0] I2=state[0] I3=state[1] O=tx_bits
-.subckt SB_LUT4 I0=tx_byte[1] I1=send I2=ready_SB_LUT4_I3_1_O I3=tx_byte_SB_LUT4_I0_I3 O=tx_byte_SB_LUT4_I0_O[1]
-.subckt SB_LUT4 I0=tx_byte[2] I1=send I2=ready_SB_LUT4_I3_2_O I3=tx_byte_SB_LUT4_I0_1_I3 O=tx_byte_SB_LUT4_I0_O[2]
-.subckt SB_LUT4 I0=shift_register[2] I1=shift_register[3] I2=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_I1_O I3=tx_byte_SB_LUT4_I0_I3_SB_LUT4_O_I3 O=tx_byte_SB_LUT4_I0_1_I3
-.subckt SB_LUT4 I0=tx_byte[3] I1=send I2=ready_SB_LUT4_I3_3_O I3=tx_byte_SB_LUT4_I0_2_I3 O=tx_byte_SB_LUT4_I0_O[3]
-.subckt SB_LUT4 I0=shift_register[3] I1=shift_register[4] I2=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_I1_O I3=tx_byte_SB_LUT4_I0_I3_SB_LUT4_O_I3 O=tx_byte_SB_LUT4_I0_2_I3
-.subckt SB_LUT4 I0=tx_byte[4] I1=send I2=ready_SB_LUT4_I3_4_O I3=tx_byte_SB_LUT4_I0_3_I3 O=tx_byte_SB_LUT4_I0_O[4]
-.subckt SB_LUT4 I0=shift_register[4] I1=shift_register[5] I2=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_I1_O I3=tx_byte_SB_LUT4_I0_I3_SB_LUT4_O_I3 O=tx_byte_SB_LUT4_I0_3_I3
-.subckt SB_LUT4 I0=tx_byte[6] I1=send I2=ready_SB_LUT4_I3_5_O I3=tx_byte_SB_LUT4_I0_4_I3 O=tx_byte_SB_LUT4_I0_O[6]
-.subckt SB_LUT4 I0=shift_register[6] I1=shift_register[7] I2=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_I1_O I3=tx_byte_SB_LUT4_I0_I3_SB_LUT4_O_I3 O=tx_byte_SB_LUT4_I0_4_I3
-.subckt SB_LUT4 I0=shift_register[1] I1=shift_register[2] I2=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_I1_O I3=tx_byte_SB_LUT4_I0_I3_SB_LUT4_O_I3 O=tx_byte_SB_LUT4_I0_I3
-.subckt SB_LUT4 I0=$false I1=$false I2=state[0] I3=state[1] O=tx_byte_SB_LUT4_I0_I3_SB_LUT4_O_I3
-.subckt SB_LUT4 I0=shift_register[0] I1=tx_byte_SB_LUT4_I1_1_I3 I2=tx_byte_SB_LUT4_I2_O I3=tx_byte_SB_LUT4_I0_O_SB_LUT4_O_I3 O=tx_byte_SB_LUT4_I0_O[0]
-.subckt SB_LUT4 I0=send I1=shift_register[5] I2=tx_byte_SB_LUT4_I1_O I3=tx_byte_SB_LUT4_I0_O_SB_LUT4_O_1_I3 O=tx_byte_SB_LUT4_I0_O[5]
-.subckt SB_LUT4 I0=shift_register[5] I1=shift_register[6] I2=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_I1_O I3=tx_byte_SB_LUT4_I0_I3_SB_LUT4_O_I3 O=tx_byte_SB_LUT4_I0_O_SB_LUT4_O_1_I3
-.subckt SB_LUT4 I0=$false I1=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_I1_O I2=tx_byte_SB_LUT4_I0_I3_SB_LUT4_O_I3 I3=shift_register[1] O=tx_byte_SB_LUT4_I0_O_SB_LUT4_O_I3
-.subckt SB_LUT4 I0=$false I1=tx_byte[5] I2=send I3=ready O=tx_byte_SB_LUT4_I1_O
-.subckt SB_LUT4 I0=ready I1=tx_byte[7] I2=shift_register[7] I3=tx_byte_SB_LUT4_I1_1_I3 O=tx_byte_SB_LUT4_I0_O[7]
-.subckt SB_LUT4 I0=send I1=serial_counter_SB_LUT4_O_I3_SB_LUT4_I3_O_SB_LUT4_I1_O I2=state[0] I3=state[1] O=tx_byte_SB_LUT4_I1_1_I3
-.subckt SB_LUT4 I0=$false I1=ready I2=tx_byte[0] I3=send O=tx_byte_SB_LUT4_I2_O
+.subckt SB_LUT4 I0=tx_byte[7] I1=shift_register[7] I2=state[1] I3=send O=tx_byte_SB_LUT4_I0_O
+.subckt SB_LUT4 I0=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O I1=state[1] I2=state[0] I3=tx_byte_SB_LUT4_I0_O O=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[7]
+.subckt SB_LUT4 I0=$false I1=tx_byte[0] I2=shift_register[0] I3=send O=tx_byte_SB_LUT4_I1_O
+.subckt SB_LUT4 I0=tx_byte_SB_LUT4_I1_O I1=tx_byte_SB_LUT4_I1_O_SB_LUT4_I0_I1 I2=state[0] I3=state[1] O=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[0]
+.subckt SB_LUT4 I0=$false I1=shift_register[0] I2=shift_register[1] I3=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O O=tx_byte_SB_LUT4_I1_O_SB_LUT4_I0_I1
+.subckt SB_LUT4 I0=$false I1=shift_register[1] I2=tx_byte[1] I3=send O=tx_byte_SB_LUT4_I2_O
+.subckt SB_LUT4 I0=$false I1=shift_register[2] I2=tx_byte[2] I3=send O=tx_byte_SB_LUT4_I2_1_O
+.subckt SB_LUT4 I0=tx_byte_SB_LUT4_I2_1_O I1=tx_byte_SB_LUT4_I2_1_O_SB_LUT4_I0_I1 I2=state[0] I3=state[1] O=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[2]
+.subckt SB_LUT4 I0=$false I1=shift_register[2] I2=shift_register[3] I3=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O O=tx_byte_SB_LUT4_I2_1_O_SB_LUT4_I0_I1
+.subckt SB_LUT4 I0=$false I1=shift_register[3] I2=tx_byte[3] I3=send O=tx_byte_SB_LUT4_I2_2_O
+.subckt SB_LUT4 I0=tx_byte_SB_LUT4_I2_2_O I1=tx_byte_SB_LUT4_I2_2_O_SB_LUT4_I0_I1 I2=state[0] I3=state[1] O=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[3]
+.subckt SB_LUT4 I0=$false I1=shift_register[3] I2=shift_register[4] I3=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O O=tx_byte_SB_LUT4_I2_2_O_SB_LUT4_I0_I1
+.subckt SB_LUT4 I0=$false I1=shift_register[4] I2=tx_byte[4] I3=send O=tx_byte_SB_LUT4_I2_3_O
+.subckt SB_LUT4 I0=tx_byte_SB_LUT4_I2_3_O I1=tx_byte_SB_LUT4_I2_3_O_SB_LUT4_I0_I1 I2=state[0] I3=state[1] O=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[4]
+.subckt SB_LUT4 I0=$false I1=shift_register[4] I2=shift_register[5] I3=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O O=tx_byte_SB_LUT4_I2_3_O_SB_LUT4_I0_I1
+.subckt SB_LUT4 I0=$false I1=shift_register[5] I2=tx_byte[5] I3=send O=tx_byte_SB_LUT4_I2_4_O
+.subckt SB_LUT4 I0=tx_byte_SB_LUT4_I2_4_O I1=tx_byte_SB_LUT4_I2_4_O_SB_LUT4_I0_I1 I2=state[0] I3=state[1] O=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[5]
+.subckt SB_LUT4 I0=$false I1=shift_register[5] I2=shift_register[6] I3=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O O=tx_byte_SB_LUT4_I2_4_O_SB_LUT4_I0_I1
+.subckt SB_LUT4 I0=$false I1=shift_register[6] I2=tx_byte[6] I3=send O=tx_byte_SB_LUT4_I2_5_O
+.subckt SB_LUT4 I0=tx_byte_SB_LUT4_I2_5_O I1=tx_byte_SB_LUT4_I2_5_O_SB_LUT4_I0_I1 I2=state[0] I3=state[1] O=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[6]
+.subckt SB_LUT4 I0=$false I1=shift_register[6] I2=shift_register[7] I3=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O O=tx_byte_SB_LUT4_I2_5_O_SB_LUT4_I0_I1
+.subckt SB_LUT4 I0=tx_byte_SB_LUT4_I2_O I1=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_I1 I2=state[0] I3=state[1] O=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_O[1]
+.subckt SB_LUT4 I0=$false I1=shift_register[1] I2=shift_register[2] I3=serial_counter_SB_LUT4_O_1_I3_SB_LUT4_I2_O_SB_LUT4_I1_O O=tx_byte_SB_LUT4_I2_O_SB_LUT4_I0_I1
 .names $true serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[0]
 1 1
 .names serial_counter[0] serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[1]
 1 1
-.names $true shift_counter_SB_DFFE_Q_D_SB_LUT4_O_1_I0_SB_LUT4_O_I0_SB_LUT4_O_I3[0]
+.names $true shift_counter_SB_DFFE_Q_D_SB_LUT4_O_2_I0_SB_LUT4_O_I0_SB_LUT4_O_I3[0]
 1 1
-.names shift_counter[0] shift_counter_SB_DFFE_Q_D_SB_LUT4_O_1_I0_SB_LUT4_O_I0_SB_LUT4_O_I3[1]
+.names shift_counter[0] shift_counter_SB_DFFE_Q_D_SB_LUT4_O_2_I0_SB_LUT4_O_I0_SB_LUT4_O_I3[1]
 1 1
-.names serial_counter_SB_LUT4_O_8_I3 serial_counter_SB_DFFSR_Q_D[0]
+.names serial_counter_SB_LUT4_O_I3 serial_counter_SB_DFFSR_Q_D[0]
+1 1
+.end
+
+.model midi_fsm
+.inputs clk new_byte_valid new_byte_value[0] new_byte_value[1] new_byte_value[2] new_byte_value[3] new_byte_value[4] new_byte_value[5] new_byte_value[6] new_byte_value[7]
+.outputs note_values[0] note_values[1] note_values[2] note_values[3] note_values[4] note_values[5] note_values[6] note_values[7] note_values[8] note_values[9] note_values[10] note_values[11] note_values[12] note_values[13] note_values[14] note_values[15] note_values[16] note_values[17] note_values[18] note_values[19] note_values[20] note_values[21] note_values[22] note_values[23] note_values[24] note_values[25] note_values[26] note_values[27] velocity_values[0] velocity_values[1] velocity_values[2] velocity_values[3] velocity_values[4] velocity_values[5] velocity_values[6] velocity_values[7] velocity_values[8] velocity_values[9] velocity_values[10] velocity_values[11] velocity_values[12] velocity_values[13] velocity_values[14] velocity_values[15] velocity_values[16] velocity_values[17] velocity_values[18] velocity_values[19] velocity_values[20] velocity_values[21] velocity_values[22] velocity_values[23] velocity_values[24] velocity_values[25] velocity_values[26] velocity_values[27]
+.names $false
+.names $true
+1
+.names $undef
+.subckt SB_DFFE C=clk D=new_byte_value[4] E=midi_fsm_msg_SB_DFFE_Q_E Q=midi_fsm_msg[0]
+.subckt SB_DFFESR C=clk D=midi_fsm_state_SB_DFFESR_Q_D E=new_byte_valid Q=midi_fsm_state[1] R=midi_fsm_state_SB_DFFE_Q_D[0]
+.subckt SB_LUT4 I0=$false I1=$false I2=new_byte_valid_SB_LUT4_I3_1_O I3=midi_fsm_state_SB_DFFESR_Q_D O=midi_fsm_state_SB_DFFESR_Q_D_SB_LUT4_I3_O
+.subckt SB_LUT4 I0=$false I1=$false I2=midi_fsm_state[1] I3=midi_fsm_state[0] O=midi_fsm_state_SB_DFFESR_Q_D
+.subckt SB_DFFE C=clk D=midi_fsm_state_SB_DFFE_Q_D[0] E=new_byte_valid Q=midi_fsm_state[0]
+.subckt SB_LUT4 I0=$false I1=new_byte_value[0] I2=new_byte_value[1] I3=midi_fsm_state_SB_DFFE_Q_D_SB_LUT4_O_I3 O=midi_fsm_state_SB_DFFE_Q_D[0]
+.subckt SB_LUT4 I0=$false I1=new_byte_value[2] I2=new_byte_value[3] I3=new_byte_value[7] O=midi_fsm_state_SB_DFFE_Q_D_SB_LUT4_O_I3
+.subckt SB_LUT4 I0=$false I1=$false I2=midi_fsm_state_SB_DFFE_Q_D[0] I3=new_byte_valid O=midi_fsm_msg_SB_DFFE_Q_E
+.subckt SB_LUT4 I0=$false I1=$false I2=midi_fsm_state_SB_DFFE_Q_D[0] I3=new_byte_valid O=new_byte_valid_SB_LUT4_I3_1_O
+.subckt SB_LUT4 I0=$false I1=midi_fsm_state[0] I2=new_byte_valid_SB_LUT4_I3_1_O I3=midi_fsm_state[1] O=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O
+.subckt SB_DFFESR C=clk D=new_byte_value[6] E=midi_fsm_state_SB_DFFESR_Q_D_SB_LUT4_I3_O Q=note_val_reg[6] R=note_val_reg_SB_DFFESR_Q_R
+.subckt SB_DFFESR C=clk D=new_byte_value[5] E=midi_fsm_state_SB_DFFESR_Q_D_SB_LUT4_I3_O Q=note_val_reg[5] R=note_val_reg_SB_DFFESR_Q_R
+.subckt SB_DFFESR C=clk D=new_byte_value[4] E=midi_fsm_state_SB_DFFESR_Q_D_SB_LUT4_I3_O Q=note_val_reg[4] R=note_val_reg_SB_DFFESR_Q_R
+.subckt SB_DFFESR C=clk D=new_byte_value[3] E=midi_fsm_state_SB_DFFESR_Q_D_SB_LUT4_I3_O Q=note_val_reg[3] R=note_val_reg_SB_DFFESR_Q_R
+.subckt SB_DFFESR C=clk D=new_byte_value[2] E=midi_fsm_state_SB_DFFESR_Q_D_SB_LUT4_I3_O Q=note_val_reg[2] R=note_val_reg_SB_DFFESR_Q_R
+.subckt SB_DFFESR C=clk D=new_byte_value[1] E=midi_fsm_state_SB_DFFESR_Q_D_SB_LUT4_I3_O Q=note_val_reg[1] R=note_val_reg_SB_DFFESR_Q_R
+.subckt SB_DFFESR C=clk D=new_byte_value[0] E=midi_fsm_state_SB_DFFESR_Q_D_SB_LUT4_I3_O Q=note_val_reg[0] R=note_val_reg_SB_DFFESR_Q_R
+.subckt SB_LUT4 I0=$false I1=$false I2=$false I3=midi_fsm_msg[0] O=note_val_reg_SB_DFFESR_Q_R
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=note_values[27]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=note_values[26]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=note_values[17]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=note_values[16]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=note_values[15]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=note_values[14]
+.subckt SB_DFFE C=clk D=note_val_reg[6] E=one_hot_reg_SB_LUT4_I3_O Q=note_values[13]
+.subckt SB_DFFE C=clk D=note_val_reg[5] E=one_hot_reg_SB_LUT4_I3_O Q=note_values[12]
+.subckt SB_DFFE C=clk D=note_val_reg[4] E=one_hot_reg_SB_LUT4_I3_O Q=note_values[11]
+.subckt SB_DFFE C=clk D=note_val_reg[3] E=one_hot_reg_SB_LUT4_I3_O Q=note_values[10]
+.subckt SB_DFFE C=clk D=note_val_reg[2] E=one_hot_reg_SB_LUT4_I3_O Q=note_values[9]
+.subckt SB_DFFE C=clk D=note_val_reg[1] E=one_hot_reg_SB_LUT4_I3_O Q=note_values[8]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=note_values[25]
+.subckt SB_DFFE C=clk D=note_val_reg[0] E=one_hot_reg_SB_LUT4_I3_O Q=note_values[7]
+.subckt SB_DFFE C=clk D=note_val_reg[6] E=one_hot_reg_SB_LUT4_I3_1_O Q=note_values[6]
+.subckt SB_DFFE C=clk D=note_val_reg[5] E=one_hot_reg_SB_LUT4_I3_1_O Q=note_values[5]
+.subckt SB_DFFE C=clk D=note_val_reg[4] E=one_hot_reg_SB_LUT4_I3_1_O Q=note_values[4]
+.subckt SB_DFFE C=clk D=note_val_reg[3] E=one_hot_reg_SB_LUT4_I3_1_O Q=note_values[3]
+.subckt SB_DFFE C=clk D=note_val_reg[2] E=one_hot_reg_SB_LUT4_I3_1_O Q=note_values[2]
+.subckt SB_DFFE C=clk D=note_val_reg[1] E=one_hot_reg_SB_LUT4_I3_1_O Q=note_values[1]
+.subckt SB_DFFE C=clk D=note_val_reg[0] E=one_hot_reg_SB_LUT4_I3_1_O Q=note_values[0]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=note_values[24]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=note_values[23]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=note_values[22]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=note_values[21]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=note_values[20]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=note_values[19]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=note_values[18]
+.subckt SB_LUT4 I0=one_hot_SB_LUT4_O_I0 I1=one_hot_SB_LUT4_O_I1 I2=one_hot_SB_LUT4_O_I2 I3=one_hot_SB_LUT4_O_I3 O=one_hot[0]
+.subckt SB_LUT4 I0=one_hot[0] I1=one_hot_SB_LUT4_O_1_I1 I2=one_hot_SB_LUT4_O_1_I2 I3=one_hot_SB_LUT4_O_1_I3 O=one_hot[1]
+.subckt SB_LUT4 I0=midi_fsm_msg[0] I1=new_byte_value[2] I2=note_values[9] I3=one_hot_SB_LUT4_O_1_I1_SB_LUT4_O_I3 O=one_hot_SB_LUT4_O_1_I1
+.subckt SB_LUT4 I0=note_values[10] I1=one_hot_SB_LUT4_O_I2_SB_LUT4_O_I1 I2=note_values[11] I3=one_hot_SB_LUT4_O_I2_SB_LUT4_O_I3 O=one_hot_SB_LUT4_O_1_I1_SB_LUT4_O_I3
+.subckt SB_LUT4 I0=midi_fsm_msg[0] I1=new_byte_value[6] I2=note_values[13] I3=one_hot_SB_LUT4_O_1_I2_SB_LUT4_O_I3 O=one_hot_SB_LUT4_O_1_I2
+.subckt SB_LUT4 I0=midi_fsm_msg[0] I1=new_byte_value[5] I2=one_hot_SB_LUT4_O_1_I2_SB_LUT4_O_I3_SB_LUT4_O_I2 I3=note_values[12] O=one_hot_SB_LUT4_O_1_I2_SB_LUT4_O_I3
+.subckt SB_LUT4 I0=$false I1=midi_fsm_msg[0] I2=new_byte_value[1] I3=note_values[8] O=one_hot_SB_LUT4_O_1_I2_SB_LUT4_O_I3_SB_LUT4_O_I2
+.subckt SB_LUT4 I0=$false I1=midi_fsm_msg[0] I2=new_byte_value[0] I3=note_values[7] O=one_hot_SB_LUT4_O_1_I3
+.subckt SB_LUT4 I0=$false I1=midi_fsm_msg[0] I2=new_byte_value[0] I3=note_values[0] O=one_hot_SB_LUT4_O_I0
+.subckt SB_LUT4 I0=midi_fsm_msg[0] I1=new_byte_value[1] I2=note_values[1] I3=one_hot_SB_LUT4_O_I1_SB_LUT4_O_I3 O=one_hot_SB_LUT4_O_I1
+.subckt SB_LUT4 I0=midi_fsm_msg[0] I1=new_byte_value[2] I2=note_values[7] I3=note_values[2] O=one_hot_SB_LUT4_O_I1_SB_LUT4_O_I3
+.subckt SB_LUT4 I0=note_values[3] I1=one_hot_SB_LUT4_O_I2_SB_LUT4_O_I1 I2=note_values[4] I3=one_hot_SB_LUT4_O_I2_SB_LUT4_O_I3 O=one_hot_SB_LUT4_O_I2
+.subckt SB_LUT4 I0=$false I1=$false I2=midi_fsm_msg[0] I3=new_byte_value[3] O=one_hot_SB_LUT4_O_I2_SB_LUT4_O_I1
+.subckt SB_LUT4 I0=$false I1=$false I2=midi_fsm_msg[0] I3=new_byte_value[4] O=one_hot_SB_LUT4_O_I2_SB_LUT4_O_I3
+.subckt SB_LUT4 I0=midi_fsm_msg[0] I1=new_byte_value[5] I2=note_values[5] I3=one_hot_SB_LUT4_O_I3_SB_LUT4_O_I3 O=one_hot_SB_LUT4_O_I3
+.subckt SB_LUT4 I0=$false I1=midi_fsm_msg[0] I2=new_byte_value[6] I3=note_values[6] O=one_hot_SB_LUT4_O_I3_SB_LUT4_O_I3
+.subckt SB_DFFE C=clk D=one_hot[1] E=midi_fsm_state_SB_DFFESR_Q_D_SB_LUT4_I3_O Q=one_hot_reg[1]
+.subckt SB_DFFE C=clk D=one_hot[0] E=midi_fsm_state_SB_DFFESR_Q_D_SB_LUT4_I3_O Q=one_hot_reg[0]
+.subckt SB_LUT4 I0=midi_fsm_state[0] I1=new_byte_valid_SB_LUT4_I3_1_O I2=midi_fsm_state[1] I3=one_hot_reg[1] O=one_hot_reg_SB_LUT4_I3_O
+.subckt SB_LUT4 I0=midi_fsm_state[0] I1=new_byte_valid_SB_LUT4_I3_1_O I2=midi_fsm_state[1] I3=one_hot_reg[0] O=one_hot_reg_SB_LUT4_I3_1_O
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=velocity_values[27]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=velocity_values[26]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=velocity_values[17]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=velocity_values[16]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=velocity_values[15]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=velocity_values[14]
+.subckt SB_DFFE C=clk D=new_byte_value[6] E=one_hot_reg_SB_LUT4_I3_O Q=velocity_values[13]
+.subckt SB_DFFE C=clk D=new_byte_value[5] E=one_hot_reg_SB_LUT4_I3_O Q=velocity_values[12]
+.subckt SB_DFFE C=clk D=new_byte_value[4] E=one_hot_reg_SB_LUT4_I3_O Q=velocity_values[11]
+.subckt SB_DFFE C=clk D=new_byte_value[3] E=one_hot_reg_SB_LUT4_I3_O Q=velocity_values[10]
+.subckt SB_DFFE C=clk D=new_byte_value[2] E=one_hot_reg_SB_LUT4_I3_O Q=velocity_values[9]
+.subckt SB_DFFE C=clk D=new_byte_value[1] E=one_hot_reg_SB_LUT4_I3_O Q=velocity_values[8]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=velocity_values[25]
+.subckt SB_DFFE C=clk D=new_byte_value[0] E=one_hot_reg_SB_LUT4_I3_O Q=velocity_values[7]
+.subckt SB_DFFE C=clk D=new_byte_value[6] E=one_hot_reg_SB_LUT4_I3_1_O Q=velocity_values[6]
+.subckt SB_DFFE C=clk D=new_byte_value[5] E=one_hot_reg_SB_LUT4_I3_1_O Q=velocity_values[5]
+.subckt SB_DFFE C=clk D=new_byte_value[4] E=one_hot_reg_SB_LUT4_I3_1_O Q=velocity_values[4]
+.subckt SB_DFFE C=clk D=new_byte_value[3] E=one_hot_reg_SB_LUT4_I3_1_O Q=velocity_values[3]
+.subckt SB_DFFE C=clk D=new_byte_value[2] E=one_hot_reg_SB_LUT4_I3_1_O Q=velocity_values[2]
+.subckt SB_DFFE C=clk D=new_byte_value[1] E=one_hot_reg_SB_LUT4_I3_1_O Q=velocity_values[1]
+.subckt SB_DFFE C=clk D=new_byte_value[0] E=one_hot_reg_SB_LUT4_I3_1_O Q=velocity_values[0]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=velocity_values[24]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=velocity_values[23]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=velocity_values[22]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=velocity_values[21]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=velocity_values[20]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=velocity_values[19]
+.subckt SB_DFFE C=clk D=$false E=new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O Q=velocity_values[18]
+.names $false i[0]
+1 1
+.names $true i[1]
+1 1
+.names $false i[2]
+1 1
+.names $false i[3]
+1 1
+.names $false i[4]
+1 1
+.names $false i[5]
+1 1
+.names $false i[6]
+1 1
+.names $false i[7]
+1 1
+.names $false i[8]
+1 1
+.names $false i[9]
+1 1
+.names $false i[10]
+1 1
+.names $false i[11]
+1 1
+.names $false i[12]
+1 1
+.names $false i[13]
+1 1
+.names $false i[14]
+1 1
+.names $false i[15]
+1 1
+.names $false i[16]
+1 1
+.names $false i[17]
+1 1
+.names $false i[18]
+1 1
+.names $false i[19]
+1 1
+.names $false i[20]
+1 1
+.names $false i[21]
+1 1
+.names $false i[22]
+1 1
+.names $false i[23]
+1 1
+.names $false i[24]
+1 1
+.names $false i[25]
+1 1
+.names $false i[26]
+1 1
+.names $false i[27]
+1 1
+.names $false i[28]
+1 1
+.names $false i[29]
+1 1
+.names $false i[30]
+1 1
+.names $false i[31]
+1 1
+.names $false midi_fsm_msg[1]
+1 1
+.names $false midi_fsm_msg[2]
+1 1
+.names note_val_reg[0] next_note_values[0]
+1 1
+.names note_val_reg[1] next_note_values[1]
+1 1
+.names note_val_reg[2] next_note_values[2]
+1 1
+.names note_val_reg[3] next_note_values[3]
+1 1
+.names note_val_reg[4] next_note_values[4]
+1 1
+.names note_val_reg[5] next_note_values[5]
+1 1
+.names note_val_reg[6] next_note_values[6]
+1 1
+.names note_val_reg[0] next_note_values[7]
+1 1
+.names note_val_reg[1] next_note_values[8]
+1 1
+.names note_val_reg[2] next_note_values[9]
+1 1
+.names note_val_reg[3] next_note_values[10]
+1 1
+.names note_val_reg[4] next_note_values[11]
+1 1
+.names note_val_reg[5] next_note_values[12]
+1 1
+.names note_val_reg[6] next_note_values[13]
+1 1
+.names new_byte_value[0] next_velocity_values[0]
+1 1
+.names new_byte_value[1] next_velocity_values[1]
+1 1
+.names new_byte_value[2] next_velocity_values[2]
+1 1
+.names new_byte_value[3] next_velocity_values[3]
+1 1
+.names new_byte_value[4] next_velocity_values[4]
+1 1
+.names new_byte_value[5] next_velocity_values[5]
+1 1
+.names new_byte_value[6] next_velocity_values[6]
+1 1
+.names new_byte_value[0] next_velocity_values[7]
+1 1
+.names new_byte_value[1] next_velocity_values[8]
+1 1
+.names new_byte_value[2] next_velocity_values[9]
+1 1
+.names new_byte_value[3] next_velocity_values[10]
+1 1
+.names new_byte_value[4] next_velocity_values[11]
+1 1
+.names new_byte_value[5] next_velocity_values[12]
+1 1
+.names new_byte_value[6] next_velocity_values[13]
 1 1
 .end
 

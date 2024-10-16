@@ -18,12 +18,12 @@ Warning: unmatched constraint 'pmod10' (on line 25)
 Info: Packing constants..
 Info: Packing IOs..
 Info: Packing LUT-FFs..
-Info:      167 LCs used as LUT4 only
-Info:       95 LCs used as LUT4 and DFF
+Info:      244 LCs used as LUT4 only
+Info:      132 LCs used as LUT4 and DFF
 Info: Packing non-LUT FFs..
-Info:       88 LCs used as DFF only
+Info:      166 LCs used as DFF only
 Info: Packing carries..
-Info:       38 LCs used as CARRY only
+Info:       61 LCs used as CARRY only
 Info: Packing RAMs..
 Info: Placing PLLs..
 Info:   constrained PLL 'pll_u1.uut' to X6/Y0/pll_3
@@ -32,231 +32,211 @@ Info:   PLL 'pll_u1.uut' has LOCK output, need to pass all outputs via LUT
 Info:   LUT strategy for LOCK: move all users to new LUT
 Info:   constrained 'pll_u1.uut_PLL$nextpnr_LOCK_lut_through' to X1/Y1/lc0
 Info: Promoting globals..
-Info: promoting out_mclk$SB_IO_OUT (fanout 190)
-Info: promoting query_sine [cen] (fanout 64)
-Info: promoting $PACKER_GND_NET (fanout 7)
+Info: promoting out_mclk$SB_IO_OUT (fanout 312)
+Info: promoting query_sine [cen] (fanout 80)
+Info: promoting midi_fsm_u1.new_byte_valid_SB_LUT4_I3_1_O_SB_LUT4_I2_O [cen] (fanout 28)
+Info: promoting $PACKER_GND_NET (fanout 14)
 Info: Constraining chains...
-Info:       36 LCs used to legalise carry chains.
-Info: Checksum: 0x0697496a
+Info:       58 LCs used to legalise carry chains.
+Info: Checksum: 0xf442debf
 
 Info: Annotating ports with timing budgets for target frequency 12.00 MHz
-Info: Checksum: 0x5929a20c
+Info: Checksum: 0xad1fd5f1
 
 Info: Device utilisation:
-Info: 	         ICESTORM_LC:   430/ 1280    33%
-Info: 	        ICESTORM_RAM:     7/   16    43%
+Info: 	         ICESTORM_LC:   667/ 1280    52%
+Info: 	        ICESTORM_RAM:    14/   16    87%
 Info: 	               SB_IO:    12/  112    10%
-Info: 	               SB_GB:     3/    8    37%
+Info: 	               SB_GB:     4/    8    50%
 Info: 	        ICESTORM_PLL:     1/    1   100%
 Info: 	         SB_WARMBOOT:     0/    1     0%
 
 Info: Placed 14 cells based on constraints.
-Info: Creating initial placement for remaining 439 cells.
-Info:   initial placement placed 439/439 cells
-Info: Initial placement time 0.02s
+Info: Creating initial placement for remaining 684 cells.
+Info:   initial placement placed 500/684 cells
+Info:   initial placement placed 684/684 cells
+Info: Initial placement time 0.11s
 Info: Running simulated annealing placer.
-Info:   at iteration #1: temp = 1.000000, timing cost = 52, wirelen = 6107
-Info:   at iteration #5: temp = 0.112500, timing cost = 75, wirelen = 6035
-Info:   at iteration #10: temp = 0.073811, timing cost = 64, wirelen = 5768
-Info:   at iteration #15: temp = 0.063284, timing cost = 75, wirelen = 5659
-Info:   at iteration #20: temp = 0.051545, timing cost = 63, wirelen = 5647
-Info:   at iteration #25: temp = 0.041984, timing cost = 80, wirelen = 5638
-Info:   at iteration #30: temp = 0.037890, timing cost = 83, wirelen = 5463
-Info:   at iteration #35: temp = 0.032486, timing cost = 59, wirelen = 5181
-Info:   at iteration #40: temp = 0.025137, timing cost = 93, wirelen = 5176
-Info:   at iteration #45: temp = 0.020474, timing cost = 68, wirelen = 5148
-Info:   at iteration #50: temp = 0.015843, timing cost = 70, wirelen = 5323
-Info:   at iteration #55: temp = 0.012904, timing cost = 41, wirelen = 5338
-Info:   at iteration #60: temp = 0.010510, timing cost = 39, wirelen = 5008
-Info:   at iteration #65: temp = 0.008133, timing cost = 83, wirelen = 5096
-Info:   at iteration #70: temp = 0.006624, timing cost = 100, wirelen = 5037
-Info:   at iteration #75: temp = 0.005126, timing cost = 80, wirelen = 5054
-Info:   at iteration #80: temp = 0.003966, timing cost = 64, wirelen = 4934
-Info:   at iteration #85: temp = 0.003400, timing cost = 79, wirelen = 4915
-Info:   at iteration #90: temp = 0.003069, timing cost = 109, wirelen = 4582
-Info:   at iteration #95: temp = 0.002631, timing cost = 83, wirelen = 4486
-Info:   at iteration #100: temp = 0.002256, timing cost = 101, wirelen = 4411
-Info:   at iteration #105: temp = 0.001746, timing cost = 30, wirelen = 4402
-Info:   at iteration #110: temp = 0.001575, timing cost = 61, wirelen = 4138
-Info:   at iteration #115: temp = 0.001351, timing cost = 78, wirelen = 4090
-Info:   at iteration #120: temp = 0.001219, timing cost = 74, wirelen = 3805
-Info:   at iteration #125: temp = 0.001158, timing cost = 62, wirelen = 3655
-Info:   at iteration #130: temp = 0.001100, timing cost = 98, wirelen = 3438
-Info:   at iteration #135: temp = 0.000993, timing cost = 65, wirelen = 3316
-Info:   at iteration #140: temp = 0.000943, timing cost = 55, wirelen = 3080
-Info:   at iteration #145: temp = 0.000896, timing cost = 63, wirelen = 2878
-Info:   at iteration #150: temp = 0.000851, timing cost = 66, wirelen = 2593
-Info:   at iteration #155: temp = 0.000851, timing cost = 74, wirelen = 2481
+Info:   at iteration #1: temp = 1.000000, timing cost = 94, wirelen = 9359
+Info:   at iteration #5: temp = 0.112500, timing cost = 53, wirelen = 9218
+Info:   at iteration #10: temp = 0.073811, timing cost = 47, wirelen = 8796
+Info:   at iteration #15: temp = 0.060120, timing cost = 60, wirelen = 9090
+Info:   at iteration #20: temp = 0.048968, timing cost = 47, wirelen = 8599
+Info:   at iteration #25: temp = 0.041984, timing cost = 94, wirelen = 8486
+Info:   at iteration #30: temp = 0.035996, timing cost = 52, wirelen = 8124
+Info:   at iteration #35: temp = 0.030862, timing cost = 40, wirelen = 7922
+Info:   at iteration #40: temp = 0.025137, timing cost = 66, wirelen = 8137
+Info:   at iteration #45: temp = 0.020474, timing cost = 49, wirelen = 7893
+Info:   at iteration #50: temp = 0.016677, timing cost = 74, wirelen = 7744
+Info:   at iteration #55: temp = 0.012904, timing cost = 66, wirelen = 7922
+Info:   at iteration #60: temp = 0.010510, timing cost = 41, wirelen = 7638
+Info:   at iteration #65: temp = 0.008561, timing cost = 53, wirelen = 7542
+Info:   at iteration #70: temp = 0.006973, timing cost = 59, wirelen = 7574
+Info:   at iteration #75: temp = 0.005679, timing cost = 44, wirelen = 7330
+Info:   at iteration #80: temp = 0.004395, timing cost = 66, wirelen = 7854
+Info:   at iteration #85: temp = 0.003579, timing cost = 67, wirelen = 7204
+Info:   at iteration #90: temp = 0.002915, timing cost = 72, wirelen = 7347
+Info:   at iteration #95: temp = 0.002375, timing cost = 49, wirelen = 7398
+Info:   at iteration #100: temp = 0.001934, timing cost = 105, wirelen = 7259
+Info:   at iteration #105: temp = 0.001658, timing cost = 59, wirelen = 6826
+Info:   at iteration #110: temp = 0.001422, timing cost = 97, wirelen = 6850
+Info:   at iteration #115: temp = 0.001283, timing cost = 60, wirelen = 6260
+Info:   at iteration #120: temp = 0.001219, timing cost = 124, wirelen = 6277
+Info:   at iteration #125: temp = 0.001045, timing cost = 75, wirelen = 5877
+Info:   at iteration #130: temp = 0.000943, timing cost = 157, wirelen = 5676
+Info:   at iteration #135: temp = 0.000851, timing cost = 68, wirelen = 5400
+Info:   at iteration #140: temp = 0.000809, timing cost = 75, wirelen = 5023
 Info: Legalising relative constraints...
-Info:     moved 23 cells, 7 unplaced (after legalising chains)
-Info:        average distance 0.887574
+Info:     moved 74 cells, 19 unplaced (after legalising chains)
+Info:        average distance 0.996323
 Info:        maximum distance 1.414214
-Info:     moved 30 cells, 0 unplaced (after replacing ripped up cells)
-Info:        average distance 1.676663
-Info:        maximum distance 9.000000
-Info:   at iteration #160: temp = 0.000809, timing cost = 33, wirelen = 2222
-Info:   at iteration #165: temp = 0.000768, timing cost = 42, wirelen = 2167
-Info:   at iteration #170: temp = 0.000768, timing cost = 44, wirelen = 1936
-Info:   at iteration #175: temp = 0.000768, timing cost = 37, wirelen = 1851
-Info:   at iteration #180: temp = 0.000659, timing cost = 40, wirelen = 1805
-Info:   at iteration #185: temp = 0.000626, timing cost = 23, wirelen = 1634
-Info:   at iteration #190: temp = 0.000594, timing cost = 24, wirelen = 1498
-Info:   at iteration #195: temp = 0.000537, timing cost = 18, wirelen = 1400
-Info:   at iteration #200: temp = 0.000484, timing cost = 21, wirelen = 1396
-Info:   at iteration #205: temp = 0.000460, timing cost = 20, wirelen = 1298
-Info:   at iteration #210: temp = 0.000437, timing cost = 17, wirelen = 1217
-Info:   at iteration #215: temp = 0.000350, timing cost = 16, wirelen = 1144
-Info:   at iteration #220: temp = 0.000280, timing cost = 17, wirelen = 1109
-Info:   at iteration #225: temp = 0.000179, timing cost = 15, wirelen = 1070
-Info:   at iteration #230: temp = 0.000143, timing cost = 14, wirelen = 1021
-Info:   at iteration #235: temp = 0.000073, timing cost = 15, wirelen = 991
-Info:   at iteration #240: temp = 0.000024, timing cost = 14, wirelen = 990
-Info:   at iteration #245: temp = 0.000012, timing cost = 15, wirelen = 983
-Info:   at iteration #250: temp = 0.000004, timing cost = 15, wirelen = 971
-Info:   at iteration #255: temp = 0.000001, timing cost = 14, wirelen = 973
-Info:   at iteration #260: temp = 0.000001, timing cost = 15, wirelen = 969
-Info:   at iteration #265: temp = 0.000000, timing cost = 14, wirelen = 972
-Info:   at iteration #268: temp = 0.000000, timing cost = 14, wirelen = 972 
-Info: SA placement time 1.54s
+Info:     moved 93 cells, 0 unplaced (after replacing ripped up cells)
+Info:        average distance 1.673650
+Info:        maximum distance 7.810250
+Info:   at iteration #145: temp = 0.000768, timing cost = 82, wirelen = 4608
+Info:   at iteration #150: temp = 0.000693, timing cost = 69, wirelen = 4531
+Info:   at iteration #155: temp = 0.000693, timing cost = 90, wirelen = 3841
+Info:   at iteration #160: temp = 0.000626, timing cost = 90, wirelen = 3670
+Info:   at iteration #165: temp = 0.000594, timing cost = 86, wirelen = 3460
+Info:   at iteration #170: temp = 0.000537, timing cost = 71, wirelen = 3259
+Info:   at iteration #175: temp = 0.000510, timing cost = 63, wirelen = 3149
+Info:   at iteration #180: temp = 0.000484, timing cost = 57, wirelen = 2884
+Info:   at iteration #185: temp = 0.000437, timing cost = 59, wirelen = 2859
+Info:   at iteration #190: temp = 0.000394, timing cost = 59, wirelen = 2750
+Info:   at iteration #195: temp = 0.000375, timing cost = 51, wirelen = 2618
+Info:   at iteration #200: temp = 0.000356, timing cost = 40, wirelen = 2448
+Info:   at iteration #205: temp = 0.000321, timing cost = 36, wirelen = 2443
+Info:   at iteration #210: temp = 0.000290, timing cost = 39, wirelen = 2285
+Info:   at iteration #215: temp = 0.000275, timing cost = 33, wirelen = 2192
+Info:   at iteration #220: temp = 0.000249, timing cost = 31, wirelen = 2076
+Info:   at iteration #225: temp = 0.000224, timing cost = 30, wirelen = 2060
+Info:   at iteration #230: temp = 0.000192, timing cost = 30, wirelen = 1978
+Info:   at iteration #235: temp = 0.000183, timing cost = 29, wirelen = 1887
+Info:   at iteration #240: temp = 0.000141, timing cost = 27, wirelen = 1901
+Info:   at iteration #245: temp = 0.000121, timing cost = 26, wirelen = 1833
+Info:   at iteration #250: temp = 0.000074, timing cost = 26, wirelen = 1799
+Info:   at iteration #255: temp = 0.000038, timing cost = 25, wirelen = 1758
+Info:   at iteration #260: temp = 0.000015, timing cost = 26, wirelen = 1745
+Info:   at iteration #265: temp = 0.000005, timing cost = 26, wirelen = 1744
+Info:   at iteration #270: temp = 0.000002, timing cost = 25, wirelen = 1742
+Info:   at iteration #275: temp = 0.000001, timing cost = 26, wirelen = 1743
+Info:   at iteration #280: temp = 0.000000, timing cost = 26, wirelen = 1743
+Info:   at iteration #285: temp = 0.000000, timing cost = 27, wirelen = 1743
+Info:   at iteration #287: temp = 0.000000, timing cost = 26, wirelen = 1741 
+Info: SA placement time 8.00s
 
-Info: Max frequency for clock 'out_mclk$SB_IO_OUT_$glb_clk': 117.69 MHz (PASS at 12.00 MHz)
+Info: Max frequency for clock 'out_mclk$SB_IO_OUT_$glb_clk': 110.91 MHz (PASS at 12.00 MHz)
 
-Info: Max delay <async>                             -> posedge out_mclk$SB_IO_OUT_$glb_clk: 1.88 ns
-Info: Max delay posedge out_mclk$SB_IO_OUT_$glb_clk -> <async>                            : 3.61 ns
+Info: Max delay <async>                             -> posedge out_mclk$SB_IO_OUT_$glb_clk: 0.92 ns
+Info: Max delay posedge out_mclk$SB_IO_OUT_$glb_clk -> <async>                            : 4.52 ns
 
 Info: Slack histogram:
-Info:  legend: * represents 1 endpoint(s)
-Info:          + represents [1,1) endpoint(s)
-Info: [ 74836,  75188) |*******************+
-Info: [ 75188,  75540) |***********************+
-Info: [ 75540,  75892) | 
-Info: [ 75892,  76244) |*+
-Info: [ 76244,  76596) | 
-Info: [ 76596,  76948) | 
-Info: [ 76948,  77300) |**+
-Info: [ 77300,  77652) |***********************+
-Info: [ 77652,  78004) |**********+
-Info: [ 78004,  78356) |************+
-Info: [ 78356,  78708) |********************************+
-Info: [ 78708,  79060) |********+
-Info: [ 79060,  79412) |**********************+
-Info: [ 79412,  79764) |**********************************+
-Info: [ 79764,  80116) |******************+
-Info: [ 80116,  80468) |***************************************+
-Info: [ 80468,  80820) |***********************+
-Info: [ 80820,  81172) |************************************************************ 
-Info: [ 81172,  81524) |*********************+
-Info: [ 81524,  81876) |******************************************************+
-Info: Checksum: 0x173a7a74
+Info:  legend: * represents 2 endpoint(s)
+Info:          + represents [1,2) endpoint(s)
+Info: [ 74317,  74722) |********+
+Info: [ 74722,  75127) |****************+
+Info: [ 75127,  75532) |**********************+
+Info: [ 75532,  75937) | 
+Info: [ 75937,  76342) |+
+Info: [ 76342,  76747) |********+
+Info: [ 76747,  77152) |****+
+Info: [ 77152,  77557) |********************************+
+Info: [ 77557,  77962) |************+
+Info: [ 77962,  78367) |**************** 
+Info: [ 78367,  78772) |************************+
+Info: [ 78772,  79177) |***********+
+Info: [ 79177,  79582) |**************************************************+
+Info: [ 79582,  79987) |************************************+
+Info: [ 79987,  80392) |*******************************+
+Info: [ 80392,  80797) |*************************+
+Info: [ 80797,  81202) |************************************************************ 
+Info: [ 81202,  81607) |**********+
+Info: [ 81607,  82012) |************************************+
+Info: [ 82012,  82417) |+
+Info: Checksum: 0x7c387b7e
 
 Info: Routing..
 Info: Setting up routing queue.
-Info: Routing 1284 arcs.
+Info: Routing 1996 arcs.
 Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
 Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
-Info:       1000 |       49        950 |   49   950 |       363|       0.03       0.03|
-Info:       1384 |       68       1316 |   19   366 |         0|       0.02       0.06|
+Info:       1000 |       44        955 |   44   955 |      1046|       0.14       0.14|
+Info:       2000 |      118       1881 |   74   926 |       128|       0.28       0.42|
+Info:       2127 |      118       2009 |    0   128 |         0|       0.02       0.45|
 Info: Routing complete.
-Info: Router1 time 0.06s
-Info: Checksum: 0x739584b0
+Info: Router1 time 0.45s
+Info: Checksum: 0x5ad03e44
 
 Info: Critical path report for clock 'out_mclk$SB_IO_OUT_$glb_clk' (posedge -> posedge):
 Info: curr total
-Info:  0.5  0.5  Source uart_tx_u1.serial_counter_SB_LUT4_O_8_I3_SB_LUT4_I3_LC.O
-Info:  0.6  1.1    Net uart_tx_u1.serial_counter_SB_DFFSR_Q_D[0] budget 0.000000 ns (6,5) -> (6,5)
-Info:                Sink uart_tx_u1.serial_counter_SB_LUT4_O_8_LC.I3
-Info:  0.3  1.4  Source uart_tx_u1.serial_counter_SB_LUT4_O_8_LC.O
-Info:  0.6  2.0    Net uart_tx_u1.serial_counter[0] budget 0.000000 ns (6,5) -> (5,5)
-Info:                Sink $nextpnr_ICESTORM_LC_34.I1
-Info:  0.3  2.3  Source $nextpnr_ICESTORM_LC_34.COUT
-Info:  0.0  2.3    Net $nextpnr_ICESTORM_LC_34$O budget 0.000000 ns (5,5) -> (5,5)
-Info:                Sink uart_tx_u1.serial_counter_SB_LUT4_O_7_I3_SB_DFF_Q_D_SB_LUT4_O_LC.CIN
-Info:  0.1  2.4  Source uart_tx_u1.serial_counter_SB_LUT4_O_7_I3_SB_DFF_Q_D_SB_LUT4_O_LC.COUT
-Info:  0.0  2.4    Net uart_tx_u1.serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[2] budget 0.000000 ns (5,5) -> (5,5)
-Info:                Sink uart_tx_u1.serial_counter_SB_LUT4_O_6_I3_SB_DFF_Q_D_SB_LUT4_O_LC.CIN
-Info:  0.1  2.5  Source uart_tx_u1.serial_counter_SB_LUT4_O_6_I3_SB_DFF_Q_D_SB_LUT4_O_LC.COUT
-Info:  0.0  2.5    Net uart_tx_u1.serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[3] budget 0.000000 ns (5,5) -> (5,5)
-Info:                Sink uart_tx_u1.serial_counter_SB_LUT4_O_5_I3_SB_DFF_Q_D_SB_LUT4_O_LC.CIN
-Info:  0.1  2.7  Source uart_tx_u1.serial_counter_SB_LUT4_O_5_I3_SB_DFF_Q_D_SB_LUT4_O_LC.COUT
-Info:  0.0  2.7    Net uart_tx_u1.serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[4] budget 0.000000 ns (5,5) -> (5,5)
-Info:                Sink uart_tx_u1.serial_counter_SB_LUT4_O_4_I3_SB_DFF_Q_D_SB_LUT4_O_LC.CIN
-Info:  0.1  2.8  Source uart_tx_u1.serial_counter_SB_LUT4_O_4_I3_SB_DFF_Q_D_SB_LUT4_O_LC.COUT
-Info:  0.0  2.8    Net uart_tx_u1.serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[5] budget 0.000000 ns (5,5) -> (5,5)
-Info:                Sink uart_tx_u1.serial_counter_SB_LUT4_O_3_I3_SB_DFF_Q_D_SB_LUT4_O_LC.CIN
-Info:  0.1  2.9  Source uart_tx_u1.serial_counter_SB_LUT4_O_3_I3_SB_DFF_Q_D_SB_LUT4_O_LC.COUT
-Info:  0.0  2.9    Net uart_tx_u1.serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[6] budget 0.000000 ns (5,5) -> (5,5)
-Info:                Sink uart_tx_u1.serial_counter_SB_LUT4_O_2_I3_SB_DFF_Q_D_SB_LUT4_O_LC.CIN
-Info:  0.1  3.0  Source uart_tx_u1.serial_counter_SB_LUT4_O_2_I3_SB_DFF_Q_D_SB_LUT4_O_LC.COUT
-Info:  0.0  3.0    Net uart_tx_u1.serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[7] budget 0.000000 ns (5,5) -> (5,5)
-Info:                Sink uart_tx_u1.serial_counter_SB_LUT4_O_1_I3_SB_DFF_Q_D_SB_LUT4_O_LC.CIN
-Info:  0.1  3.2  Source uart_tx_u1.serial_counter_SB_LUT4_O_1_I3_SB_DFF_Q_D_SB_LUT4_O_LC.COUT
-Info:  0.2  3.4    Net uart_tx_u1.serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[8] budget 0.190000 ns (5,5) -> (5,6)
-Info:                Sink uart_tx_u1.serial_counter_SB_LUT4_O_I3_SB_DFF_Q_D_SB_LUT4_O_LC.CIN
-Info:  0.1  3.5  Source uart_tx_u1.serial_counter_SB_LUT4_O_I3_SB_DFF_Q_D_SB_LUT4_O_LC.COUT
-Info:  0.3  3.8    Net $nextpnr_ICESTORM_LC_35$I3 budget 0.260000 ns (5,6) -> (5,6)
-Info:                Sink $nextpnr_ICESTORM_LC_35.I3
-Info:  0.3  4.1  Source $nextpnr_ICESTORM_LC_35.O
-Info:  0.6  4.7    Net uart_tx_u1.serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[9] budget 0.000000 ns (5,6) -> (6,6)
-Info:                Sink $nextpnr_ICESTORM_LC_36.I1
-Info:  0.3  4.9  Source $nextpnr_ICESTORM_LC_36.COUT
-Info:  0.0  4.9    Net $nextpnr_ICESTORM_LC_36$O budget 0.000000 ns (6,6) -> (6,6)
-Info:                Sink uart_tx_u1.serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_1_LC.CIN
-Info:  0.1  5.0  Source uart_tx_u1.serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_1_LC.COUT
-Info:  0.0  5.0    Net uart_tx_u1.serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[10] budget 0.000000 ns (6,6) -> (6,6)
-Info:                Sink uart_tx_u1.serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_LC.CIN
-Info:  0.1  5.2  Source uart_tx_u1.serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_LC.COUT
-Info:  0.3  5.4    Net $nextpnr_ICESTORM_LC_37$I3 budget 0.260000 ns (6,6) -> (6,6)
-Info:                Sink $nextpnr_ICESTORM_LC_37.I3
-Info:  0.3  5.7  Source $nextpnr_ICESTORM_LC_37.O
-Info:  0.6  6.3    Net uart_tx_u1.serial_counter_SB_DFFSR_Q_D_SB_LUT4_O_I3[11] budget 70.865997 ns (6,6) -> (7,5)
-Info:                Sink uart_tx_u1.serial_counter_SB_LUT4_O_7_I3_SB_LUT4_I2_I0_SB_LUT4_I1_LC.I3
-Info:  0.3  6.7  Setup uart_tx_u1.serial_counter_SB_LUT4_O_7_I3_SB_LUT4_I2_I0_SB_LUT4_I1_LC.I3
-Info: 3.6 ns logic, 3.1 ns routing
+Info:  0.5  0.5  Source uart_rx_u1.state_SB_DFFE_Q_DFFLC.O
+Info:  0.6  1.1    Net uart_rx_u1.state[4] budget 10.141000 ns (4,13) -> (4,13)
+Info:                Sink uart_rx_u1.state_SB_DFFE_Q_E_SB_LUT4_O_LC.I1
+Info:  0.4  1.5  Source uart_rx_u1.state_SB_DFFE_Q_E_SB_LUT4_O_LC.O
+Info:  0.6  2.1    Net uart_rx_u1.state_SB_DFFE_Q_E budget 10.189000 ns (4,13) -> (5,14)
+Info:                Sink uart_rx_u1.valid_SB_LUT4_O_LC.I1
+Info:  0.4  2.5  Source uart_rx_u1.valid_SB_LUT4_O_LC.O
+Info:  0.6  3.1    Net rx_valid budget 10.355000 ns (5,14) -> (6,15)
+Info:                Sink rx_valid_SB_LUT4_I2_LC.I2
+Info:  0.4  3.5  Source rx_valid_SB_LUT4_I2_LC.O
+Info:  0.6  4.1    Net midi_fsm_u1_new_byte_valid budget 10.372000 ns (6,15) -> (7,15)
+Info:                Sink midi_fsm_u1.new_byte_valid_SB_LUT4_I3_1_LC.I3
+Info:  0.3  4.4  Source midi_fsm_u1.new_byte_valid_SB_LUT4_I3_1_LC.O
+Info:  1.0  5.3    Net midi_fsm_u1.new_byte_valid_SB_LUT4_I3_1_O budget 12.453000 ns (7,15) -> (8,12)
+Info:                Sink midi_fsm_u1.one_hot_reg_SB_LUT4_I3_1_LC.I1
+Info:  0.4  5.7  Source midi_fsm_u1.one_hot_reg_SB_LUT4_I3_1_LC.O
+Info:  1.7  7.4    Net midi_fsm_u1.one_hot_reg_SB_LUT4_I3_1_O budget 12.439000 ns (8,12) -> (9,13)
+Info:                Sink midi_fsm_u1.velocity_values_SB_DFFE_Q_21_DFFLC.CEN
+Info:  0.1  7.5  Setup midi_fsm_u1.velocity_values_SB_DFFE_Q_21_DFFLC.CEN
+Info: 2.5 ns logic, 5.0 ns routing
 
 Info: Critical path report for cross-domain path '<async>' -> 'posedge out_mclk$SB_IO_OUT_$glb_clk':
 Info: curr total
 Info:  0.0  0.0  Source rx_pin$sb_io.D_IN_0
-Info:  1.6  1.6    Net rx_pin$SB_IO_IN budget 82.998001 ns (0,11) -> (5,14)
+Info:  0.6  0.6    Net rx_pin$SB_IO_IN budget 82.998001 ns (0,11) -> (1,11)
 Info:                Sink uart_rx_u1.rx_bits_SB_LUT4_I3_LC.I3
-Info:  0.3  1.9  Setup uart_rx_u1.rx_bits_SB_LUT4_I3_LC.I3
-Info: 0.3 ns logic, 1.6 ns routing
+Info:  0.3  0.9  Setup uart_rx_u1.rx_bits_SB_LUT4_I3_LC.I3
+Info: 0.3 ns logic, 0.6 ns routing
 
 Info: Critical path report for cross-domain path 'posedge out_mclk$SB_IO_OUT_$glb_clk' -> '<async>':
 Info: curr total
-Info:  0.5  0.5  Source uart_tx_u1.state_SB_DFFE_Q_D_SB_LUT4_O_LC.O
-Info:  1.6  2.1    Net uart_tx_u1.state[0] budget 39.828999 ns (6,8) -> (5,12)
-Info:                Sink uart_tx_u1.tx_bits_SB_LUT4_O_LC.I2
-Info:  0.4  2.5  Source uart_tx_u1.tx_bits_SB_LUT4_O_LC.O
-Info:  1.1  3.6    Net tx_pin$SB_IO_OUT budget 40.445000 ns (5,12) -> (0,12)
-Info:                Sink tx_pin$sb_io.D_OUT_0
-Info: 0.9 ns logic, 2.7 ns routing
+Info:  0.5  0.5  Source midi_fsm_u1.note_values_SB_DFFE_Q_20_DFFLC.O
+Info:  1.3  1.9    Net note_value_2[0] budget 26.127001 ns (9,15) -> (8,12)
+Info:                Sink led2_SB_LUT4_O_I3_SB_LUT4_O_LC.I0
+Info:  0.4  2.3  Source led2_SB_LUT4_O_I3_SB_LUT4_O_LC.O
+Info:  0.6  2.9    Net led2_SB_LUT4_O_I3 budget 26.447001 ns (8,12) -> (8,12)
+Info:                Sink led2_SB_LUT4_O_LC.I3
+Info:  0.3  3.2  Source led2_SB_LUT4_O_LC.O
+Info:  1.2  4.4    Net led2$SB_IO_OUT budget 26.364000 ns (8,12) -> (13,12)
+Info:                Sink led2$sb_io.D_OUT_0
+Info: 1.3 ns logic, 3.1 ns routing
 
-Info: Max frequency for clock 'out_mclk$SB_IO_OUT_$glb_clk': 150.06 MHz (PASS at 12.00 MHz)
+Info: Max frequency for clock 'out_mclk$SB_IO_OUT_$glb_clk': 133.07 MHz (PASS at 12.00 MHz)
 
-Info: Max delay <async>                             -> posedge out_mclk$SB_IO_OUT_$glb_clk: 1.94 ns
-Info: Max delay posedge out_mclk$SB_IO_OUT_$glb_clk -> <async>                            : 3.62 ns
+Info: Max delay <async>                             -> posedge out_mclk$SB_IO_OUT_$glb_clk: 0.92 ns
+Info: Max delay posedge out_mclk$SB_IO_OUT_$glb_clk -> <async>                            : 4.44 ns
 
 Info: Slack histogram:
-Info:  legend: * represents 1 endpoint(s)
-Info:          + represents [1,1) endpoint(s)
-Info: [ 76669,  76930) |**********************************************************+
-Info: [ 76930,  77191) |**+
-Info: [ 77191,  77452) |*******+
-Info: [ 77452,  77713) |*********+
-Info: [ 77713,  77974) |*********************+
-Info: [ 77974,  78235) |+
-Info: [ 78235,  78496) |************+
-Info: [ 78496,  78757) |******************+
-Info: [ 78757,  79018) |******************+
-Info: [ 79018,  79279) |*********************+
-Info: [ 79279,  79540) |**************************+
-Info: [ 79540,  79801) |***************+
-Info: [ 79801,  80062) |**************************+
-Info: [ 80062,  80323) |*********************************+
-Info: [ 80323,  80584) |************************+
-Info: [ 80584,  80845) |************************************+
-Info: [ 80845,  81106) |*****************************************+
-Info: [ 81106,  81367) |***********************+
-Info: [ 81367,  81628) |***********+
-Info: [ 81628,  81889) |************************************************************ 
+Info:  legend: * represents 2 endpoint(s)
+Info:          + represents [1,2) endpoint(s)
+Info: [ 75818,  76148) |***+
+Info: [ 76148,  76478) |************************************************************ 
+Info: [ 76478,  76808) |**********+
+Info: [ 76808,  77138) |**********+
+Info: [ 77138,  77468) |*****************+
+Info: [ 77468,  77798) |********+
+Info: [ 77798,  78128) |***********+
+Info: [ 78128,  78458) |**********+
+Info: [ 78458,  78788) |********************+
+Info: [ 78788,  79118) |****************+
+Info: [ 79118,  79448) |**************************************+
+Info: [ 79448,  79778) |**************************+
+Info: [ 79778,  80108) |*************************+
+Info: [ 80108,  80438) |**********************************+
+Info: [ 80438,  80768) |*****************+
+Info: [ 80768,  81098) |**********************************+
+Info: [ 81098,  81428) |*************************************+
+Info: [ 81428,  81758) |**************+
+Info: [ 81758,  82088) |******************************+
+Info: [ 82088,  82418) |+
 4 warnings, 0 errors

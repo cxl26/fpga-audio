@@ -4,7 +4,6 @@ module dds #(
     parameter CNTR_WDTH = 4
 ) (
     input  wire                 clk,
-    input  wire                 change_note,
     input  wire                 query_sine,
     input  wire [6:0]           note,
     output reg  [DATA_WDTH-1:0] sine
@@ -36,9 +35,6 @@ module dds #(
         // 3. put sine_value on sine register
 
     always @(posedge clk) begin
-        if (change_note) begin
-            note_lookup <= note;
-        end
 
         step_size <= note_value;
 
@@ -55,7 +51,7 @@ module dds #(
         .ADDR_WDTH(7)
     ) note_lookup_u1 (
         .clk         (clk),
-        .note_lookup (note_lookup),
+        .note_lookup (note),
         .note_value  (note_value)
     );
 

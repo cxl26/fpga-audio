@@ -1,0 +1,146 @@
+
+icetime topological timing analysis report
+==========================================
+
+Report for critical path:
+-------------------------
+
+        ram_10_11 (SB_RAM40_4K) [clk] -> RDATA[1]: 2.246 ns
+     2.246 ns net_19933 (dds_u1.sine_value[0])
+        t2308 (LocalMux) I -> O: 0.330 ns
+        inmux_9_10_19867_19915 (InMux) I -> O: 0.260 ns
+        t507 (CascadeMux) I -> O: 0.000 ns
+        lc40_9_10_5 (LogicCell40) in2 -> lcout: 0.379 ns
+     3.214 ns net_17706 (dds_u1.sine_lookup_u1.sine_value_SB_LUT4_O_10_I3)
+        odrv_9_10_17706_13627 (Odrv4) I -> O: 0.372 ns
+        t2181 (Span4Mux_v1) I -> O: 0.203 ns
+        t2180 (LocalMux) I -> O: 0.330 ns
+        inmux_6_9_13411_13435 (InMux) I -> O: 0.260 ns
+        lc40_6_9_0 (LogicCell40) in1 -> carryout: 0.260 ns
+     4.638 ns t221
+        lc40_6_9_1 (LogicCell40) carryin -> carryout: 0.126 ns
+     4.764 ns net_13439 ($nextpnr_ICESTORM_LC_1$I3)
+        lc40_6_9_2 (LogicCell40) carryin -> carryout: 0.126 ns
+     4.890 ns t222
+        lc40_6_9_3 (LogicCell40) carryin -> carryout: 0.126 ns
+     5.016 ns net_13451 ($nextpnr_ICESTORM_LC_2$I3)
+        lc40_6_9_4 (LogicCell40) carryin -> carryout: 0.126 ns
+     5.143 ns t223
+        lc40_6_9_5 (LogicCell40) carryin -> carryout: 0.126 ns
+     5.269 ns net_13463 ($nextpnr_ICESTORM_LC_3$I3)
+        lc40_6_9_6 (LogicCell40) carryin -> carryout: 0.126 ns
+     5.395 ns t228
+        lc40_6_9_7 (LogicCell40) carryin -> carryout: 0.126 ns
+     5.521 ns net_13475 ($nextpnr_ICESTORM_LC_4$I3)
+        t229 (ICE_CARRY_IN_MUX) carryinitin -> carryinitout: 0.196 ns
+        lc40_6_10_0 (LogicCell40) carryin -> carryout: 0.126 ns
+     5.844 ns t230
+        lc40_6_10_1 (LogicCell40) carryin -> carryout: 0.126 ns
+     5.970 ns net_13562 ($nextpnr_ICESTORM_LC_5$I3)
+        lc40_6_10_2 (LogicCell40) carryin -> carryout: 0.126 ns
+     6.096 ns t231
+        lc40_6_10_3 (LogicCell40) carryin -> carryout: 0.126 ns
+     6.223 ns net_13574 ($nextpnr_ICESTORM_LC_6$I3)
+        lc40_6_10_4 (LogicCell40) carryin -> carryout: 0.126 ns
+     6.349 ns t232
+        lc40_6_10_5 (LogicCell40) carryin -> carryout: 0.126 ns
+     6.475 ns net_13586 ($nextpnr_ICESTORM_LC_7$I3)
+        lc40_6_10_6 (LogicCell40) carryin -> carryout: 0.126 ns
+     6.601 ns t239
+        lc40_6_10_7 (LogicCell40) carryin -> carryout: 0.126 ns
+     6.728 ns net_13598 ($nextpnr_ICESTORM_LC_8$I3)
+        t240 (ICE_CARRY_IN_MUX) carryinitin -> carryinitout: 0.196 ns
+        lc40_6_11_0 (LogicCell40) carryin -> carryout: 0.126 ns
+     7.050 ns t241
+        lc40_6_11_1 (LogicCell40) carryin -> carryout: 0.126 ns
+     7.177 ns net_13685 ($nextpnr_ICESTORM_LC_9$I3)
+        lc40_6_11_2 (LogicCell40) carryin -> carryout: 0.126 ns
+     7.303 ns t242
+        lc40_6_11_3 (LogicCell40) carryin -> carryout: 0.126 ns
+     7.429 ns net_13697 ($nextpnr_ICESTORM_LC_10$I3)
+        lc40_6_11_4 (LogicCell40) carryin -> carryout: 0.126 ns
+     7.555 ns t243
+        lc40_6_11_5 (LogicCell40) carryin -> carryout: 0.126 ns
+     7.682 ns net_13709 ($nextpnr_ICESTORM_LC_11$I3)
+        lc40_6_11_6 (LogicCell40) carryin -> carryout: 0.126 ns
+     7.808 ns t249
+        lc40_6_11_7 (LogicCell40) carryin -> carryout: 0.126 ns
+     7.934 ns net_13721 ($nextpnr_ICESTORM_LC_12$I3)
+        t250 (ICE_CARRY_IN_MUX) carryinitin -> carryinitout: 0.196 ns
+        lc40_6_12_0 (LogicCell40) carryin -> carryout: 0.126 ns
+     8.257 ns t251
+        lc40_6_12_1 (LogicCell40) carryin -> carryout: 0.126 ns
+     8.383 ns net_13808 ($nextpnr_ICESTORM_LC_13$I3)
+        lc40_6_12_2 (LogicCell40) carryin -> carryout: 0.126 ns
+     8.509 ns t252
+        lc40_6_12_3 (LogicCell40) carryin -> carryout: 0.126 ns
+     8.635 ns net_13820 ($nextpnr_ICESTORM_LC_14$I3)
+        lc40_6_12_4 (LogicCell40) carryin -> carryout: 0.126 ns
+     8.762 ns t253
+        lc40_6_12_5 (LogicCell40) carryin -> carryout: 0.126 ns
+     8.888 ns net_13832 ($nextpnr_ICESTORM_LC_15$I3)
+        lc40_6_12_6 (LogicCell40) carryin -> carryout: 0.126 ns
+     9.014 ns t260
+        lc40_6_12_7 (LogicCell40) carryin -> carryout: 0.126 ns
+     9.140 ns net_13844 ($nextpnr_ICESTORM_LC_16$I3)
+        t261 (ICE_CARRY_IN_MUX) carryinitin -> carryinitout: 0.196 ns
+        lc40_6_13_0 (LogicCell40) carryin -> carryout: 0.126 ns
+     9.463 ns t262
+        lc40_6_13_1 (LogicCell40) carryin -> carryout: 0.126 ns
+     9.589 ns net_13931 ($nextpnr_ICESTORM_LC_17$I3)
+        lc40_6_13_2 (LogicCell40) carryin -> carryout: 0.126 ns
+     9.715 ns t263
+        lc40_6_13_3 (LogicCell40) carryin -> carryout: 0.126 ns
+     9.842 ns net_13943 ($nextpnr_ICESTORM_LC_18$I3)
+        lc40_6_13_4 (LogicCell40) carryin -> carryout: 0.126 ns
+     9.968 ns t264
+        lc40_6_13_5 (LogicCell40) carryin -> carryout: 0.126 ns
+    10.094 ns net_13955 ($nextpnr_ICESTORM_LC_19$I3)
+        lc40_6_13_6 (LogicCell40) carryin -> carryout: 0.126 ns
+    10.220 ns t272
+        lc40_6_13_7 (LogicCell40) carryin -> carryout: 0.126 ns
+    10.347 ns net_13967 ($nextpnr_ICESTORM_LC_20$I3)
+        t273 (ICE_CARRY_IN_MUX) carryinitin -> carryinitout: 0.196 ns
+        lc40_6_14_0 (LogicCell40) carryin -> carryout: 0.126 ns
+    10.669 ns t274
+        lc40_6_14_1 (LogicCell40) carryin -> carryout: 0.126 ns
+    10.795 ns net_14054 ($nextpnr_ICESTORM_LC_21$I3)
+        inmux_6_14_14054_14064 (InMux) I -> O: 0.260 ns
+        lc40_6_14_2 (LogicCell40) in3 -> lcout: 0.316 ns
+    11.371 ns net_11868 (dds_u1.sine_lookup_u1.sine_value_SB_LUT4_O_I2_SB_CARRY_I1_CO[22])
+        t1566 (LocalMux) I -> O: 0.330 ns
+        inmux_6_14_14018_14092 (InMux) I -> O: 0.260 ns
+    11.960 ns net_14092 (dds_u1.sine_lookup_u1.sine_value_SB_LUT4_O_I2_SB_CARRY_I1_CO[22])
+        lc40_6_14_7 (LogicCell40) in1 [setup]: 0.379 ns
+    12.338 ns net_11873 (sine_value_1[22])
+
+Resolvable net names on path:
+     2.246 ns ..  2.835 ns dds_u1.sine_value[0]
+     3.214 ns ..  4.378 ns dds_u1.sine_lookup_u1.sine_value_SB_LUT4_O_10_I3
+     4.764 ns ..  4.764 ns $nextpnr_ICESTORM_LC_1$I3
+     5.016 ns ..  5.016 ns $nextpnr_ICESTORM_LC_2$I3
+     5.269 ns ..  5.269 ns $nextpnr_ICESTORM_LC_3$I3
+     5.521 ns ..  5.718 ns $nextpnr_ICESTORM_LC_4$I3
+     5.970 ns ..  5.970 ns $nextpnr_ICESTORM_LC_5$I3
+     6.223 ns ..  6.223 ns $nextpnr_ICESTORM_LC_6$I3
+     6.475 ns ..  6.475 ns $nextpnr_ICESTORM_LC_7$I3
+     6.728 ns ..  6.924 ns $nextpnr_ICESTORM_LC_8$I3
+     7.177 ns ..  7.177 ns $nextpnr_ICESTORM_LC_9$I3
+     7.429 ns ..  7.429 ns $nextpnr_ICESTORM_LC_10$I3
+     7.682 ns ..  7.682 ns $nextpnr_ICESTORM_LC_11$I3
+     7.934 ns ..  8.130 ns $nextpnr_ICESTORM_LC_12$I3
+     8.383 ns ..  8.383 ns $nextpnr_ICESTORM_LC_13$I3
+     8.635 ns ..  8.635 ns $nextpnr_ICESTORM_LC_14$I3
+     8.888 ns ..  8.888 ns $nextpnr_ICESTORM_LC_15$I3
+     9.140 ns ..  9.337 ns $nextpnr_ICESTORM_LC_16$I3
+     9.589 ns ..  9.589 ns $nextpnr_ICESTORM_LC_17$I3
+     9.842 ns ..  9.842 ns $nextpnr_ICESTORM_LC_18$I3
+    10.094 ns .. 10.094 ns $nextpnr_ICESTORM_LC_19$I3
+    10.347 ns .. 10.543 ns $nextpnr_ICESTORM_LC_20$I3
+    10.795 ns .. 11.055 ns $nextpnr_ICESTORM_LC_21$I3
+    11.371 ns .. 11.960 ns dds_u1.sine_lookup_u1.sine_value_SB_LUT4_O_I2_SB_CARRY_I1_CO[22]
+                  lcout -> sine_value_1[22]
+
+Total number of logic levels: 45
+Total path delay: 12.34 ns (81.05 MHz)
+
