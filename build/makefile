@@ -9,6 +9,7 @@ synth:
 		-p "read_verilog $(TOPLEVEL_FILE);  hierarchy \
 		-libdir ../source/clk  \
 		-libdir ../source/dds  \
+		-libdir ../source/effects  \
 		-libdir ../source/fifo \
 		-libdir ../source/i2s  \
 		-libdir ../source/midi  \
@@ -27,6 +28,7 @@ sim:
 		-Y .v \
 		-y ../source/clk  \
 		-y ../source/dds  \
+		-y ../source/effects  \
 		-y ../source/fifo \
 		-y ../source/i2s  \
 		-y ../source/midi  \

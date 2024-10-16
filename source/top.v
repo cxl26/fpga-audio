@@ -31,6 +31,7 @@ module top (
 
     wire signed [23:0] mixed_sine_value;
 
+    // only 2 voice polyphony right now
     wire signed [23:0] sine_value_1;
     wire signed [23:0] sine_value_2;
 

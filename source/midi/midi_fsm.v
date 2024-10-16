@@ -9,8 +9,8 @@ module midi_fsm #(
     input  wire                 clk,
     input  wire                 new_byte_valid,
     input  wire [7:0]           new_byte_value,
-    output reg  [7*4-1:0]       note_values = 0,
-    output reg  [7*4-1:0]       velocity_values = 0
+    output reg  [7*NUM_DDS-1:0] note_values = 0,
+    output reg  [7*NUM_DDS-1:0] velocity_values = 0
 );
     // at the moment only implementing 2 msg types NOTE_ON and NOTE_OFF, maybe CTRL_CHANGE later
     // actually 8 possible midi msgs (3-bit value) but really just using first bit rn
@@ -25,16 +25,15 @@ module midi_fsm #(
     localparam DATA2 = 3'd2;
 
 
-    reg [7*NUM_DDS-1:0]     next_note_values;
-    reg [7*NUM_DDS-1:0]     next_velocity_values;
-    reg [6:0]               compare_val;
-    reg [6:0]               note_val;
-    reg [6:0]               note_val_reg = 0;
-    reg [NUM_DDS-1:0]       one_hot;
-    reg [NUM_DDS-1:0]       one_hot_reg = 0;
+    wire [7*NUM_DDS-1:0]    next_note_values;
+    wire [7*NUM_DDS-1:0]    next_velocity_values;
+    wire [6:0]              compare_val;
+    wire [6:0]              note_val;
+    reg  [6:0]              note_val_reg = 0;
+    wire [NUM_DDS-1:0]      one_hot;
+    reg  [NUM_DDS-1:0]      one_hot_reg = 0;
 
-    integer i;
-    
+    genvar i;
 
     // STATUS BYTE
     // Bit  [7]   status indicator (1)
@@ -50,33 +49,33 @@ module midi_fsm #(
     // Bits [6:0] velocity value
 
 
-    // Combinational logic for DATA1 state NOTE_ON/NOTE_OFF messages
-    always@(*) begin
-        // Multiplexer to select value based on NOTE_ON or NOTE_OFF
-        compare_val = midi_fsm_msg[0] ? 7'b0 : new_byte_value[6:0];
-        note_val    = midi_fsm_msg[0] ? new_byte_value[6:0] : 7'b0;
-        // Comparator and one-hot priority encoder to select which dds note to change
-        one_hot[0] = (note_values[0:7] == compare_val);
-        for (i=1; i<NUM_DDS; i++) begin
-            one_hot[i] = (note_values[i*7+:7] == compare_val) && ~|one_hot[i-1:0];
-        end
-        // one_hot[0] = (note_values[0*7+:7] == compare_val);
-        // one_hot[1] = (note_values[1*7+:7] == compare_val) && ~|one_hot[0];
-        // one_hot[2] = (note_values[2*7+:7] == compare_val) && ~|one_hot[1:0];
-        // one_hot[3] = (note_values[3*7+:7] == compare_val) && ~|one_hot[2:0];
-    end
+    /*** Combinational logic for DATA1 state NOTE_ON/NOTE_OFF messages ***/
 
-    // Combinational logic for DATA2 sate NOTE_ON/NOTE_OFF messages
-    always@(*) begin
-        // Mux next note
-        for (i=0; i<NUM_DDS; i++) begin
-            next_note_values[i*7+:7] = one_hot_reg[i] ? note_val_reg : note_values[i*7+:7];
+    // Multiplexer to select value based on NOTE_ON or NOTE_OFF
+    assign compare_val = midi_fsm_msg[0] ? 7'b0 : new_byte_value[6:0];
+    assign note_val    = midi_fsm_msg[0] ? new_byte_value[6:0] : 7'b0;
+    // Comparator and one-hot priority encoder to select which dds note to change
+    assign one_hot[0] = (note_values[7:0] == compare_val);
+    generate
+        for (i=1; i<NUM_DDS; i=i+1) begin
+            assign one_hot[i] = (note_values[i*7+:7] == compare_val) && ~|one_hot[i-1:0];
         end
-        // Mux next velocity
-        for (i=0; i<NUM_DDS; i++) begin
-            next_velocity_values[i*7+:7] = one_hot_reg[i] ? new_byte_value[6:0] : velocity_values[i*7+:7];
+    endgenerate
+
+    /*** Combinational logic for DATA2 state NOTE_ON/NOTE_OFF messages ***/
+
+    // Mux next note
+    generate 
+        for (i=0; i<NUM_DDS; i=i+1) begin
+            assign next_note_values[i*7+:7] = one_hot_reg[i] ? note_val_reg : note_values[i*7+:7];
         end
-    end
+    endgenerate
+    // Mux next velocity
+    generate
+        for (i=0; i<NUM_DDS; i=i+1) begin
+            assign next_velocity_values[i*7+:7] = one_hot_reg[i] ? new_byte_value[6:0] : velocity_values[i*7+:7];
+        end
+    endgenerate
 
     // Sequential logic MIDI FSM
     always@(posedge clk) begin
